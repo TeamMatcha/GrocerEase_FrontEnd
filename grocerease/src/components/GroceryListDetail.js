@@ -13,6 +13,29 @@ const GroceryListDetail = ({token}) => {
     const [listTags, setListTags] = useState([]);
     const navigate = useNavigate();
 
+    const [choices, setChoices] = useState([
+        // hardcode the category/choices list that was given by the backend
+        {id: 8, choices:'Produce'},
+        {id: 9, choices:'Dairy'},
+        {id: 10, choices:'Baked Goods'},
+        {id: 11, choices:'Meat and Fish'},
+        {id: 12, choices:'Snacks'},
+        {id: 13, choices:'Alcohol'},
+        {id: 14, choices:'Baby Care'},
+        {id: 15, choices:'Canned Goods'},
+        {id: 16, choices:'Dry Goods'},
+        {id: 17, choices:'Sauces and Condiments'},
+        {id: 18, choices:'Non-Alcoholic Beverages'},
+        {id: 19, choices:'Household and Cleaning'},
+        {id: 20, choices:'Alcohol'},
+        {id: 21, choices:'Health and Beauty'},
+        {id: 22, choices:'Pet Care'},
+
+    ]);
+
+
+
+
     useEffect(() => {
         axios.get(`https://grocerease.herokuapp.com/grocerease/list_detail/${listId}`,
         {
