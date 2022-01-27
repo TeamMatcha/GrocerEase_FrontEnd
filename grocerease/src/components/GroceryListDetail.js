@@ -25,9 +25,9 @@ const GroceryListDetail = ({token}) => {
         {id: 15, choices:'Canned Goods'},
         {id: 16, choices:'Dry Goods'},
         {id: 17, choices:'Sauces and Condiments'},
-        {id: 18, choices:'Non-Alcoholic Beverages'},
-        {id: 19, choices:'Household and Cleaning'},
-        {id: 20, choices:'Alcohol'},
+        {id: 18, choices:'Herbs and Spices'},
+        {id: 19, choices:'Non-Alcoholic Beverages'},
+        {id: 20, choices:'Household and Cleaning'},
         {id: 21, choices:'Health and Beauty'},
         {id: 22, choices:'Pet Care'},
 
@@ -102,6 +102,38 @@ const GroceryListDetail = ({token}) => {
 
     return (
         <>
+        {/* create a dropdown with the choices that the user can select */}
+        <div className='categoryDropdown'>
+                    <div>
+                        <label>Choose a category</label>
+                        <select className="dropdown">
+                            <option value="">Select one</option>
+                            <option value="choices">Produce</option>
+                            <option value="choices">Dairy</option>
+                            <option value="choices">Baked Goods</option>
+                            <option value="choices">Meat and Fish</option>
+                            <option value="choices">Snacks</option>
+                            <option value="choices">Alcohol</option>
+                            <option value="choices">Baby Care</option>
+                            <option value="choices">Canned Goods</option>
+                            <option value="choices">Dry Goods</option>
+                            <option value="choices">Sauces and Condiments</option>
+                            <option value="choices">Herbs and Spices</option>
+                            <option value="choices">Non-Alcoholic Beverages</option>
+                            <option value="choices">Household and Cleaning</option>
+                            <option value="choices">Health and Beauty</option>
+                            <option value="choices">Pet Care</option>
+
+                        </select>
+                    </div>
+
+        </div>
+
+
+
+
+
+
         <div className='list_detail_name_tag'>
             <input className='pa2 input-reset ba bg-transparent w-100 measure search_input' onChange={(event) => setListName(event.target.value)} value={listName}/>
 
