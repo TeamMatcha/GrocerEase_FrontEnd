@@ -19,8 +19,6 @@ const SavedGroceryList = ({ token }) => {
       })
       .then((res) => {
         let saved_lists_from_server = res.data;
-        console.log("LISTS from SERVER");
-        console.log(saved_lists_from_server);
         const sorted_lists = _.orderBy(
           saved_lists_from_server,
           ["date_created"],
@@ -33,7 +31,6 @@ const SavedGroceryList = ({ token }) => {
   }, [token, setLists]);
 
   const SortList = (event) => {
-    console.log(event.target.value);
     const sorted_lists = _.orderBy(
       lists,
       [event.target.value],

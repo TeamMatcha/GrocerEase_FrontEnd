@@ -38,10 +38,8 @@ const CreateListForm = ({ token }) => {
   };
 
   return (
-    <>
       <React.Fragment>
         <CssBaseline />
-
         <Container style={{ backgroundColor: "#FFF8F0" }}>
           <div>
             <form onSubmit={handleSubmit}>
@@ -63,7 +61,6 @@ const CreateListForm = ({ token }) => {
           </div>
         </Container>
       </React.Fragment>
-    </>
   );
 };
 

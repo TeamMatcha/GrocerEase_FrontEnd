@@ -11,7 +11,6 @@ import {
   Button,
   TextField,
 } from "@mui/material";
-// import { fontWeight } from "@mui/system";
 
 export default function Login({ isLoggedIn, setAuth }) {
   const [username, setUsername] = useState("");

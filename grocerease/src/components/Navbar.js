@@ -2,7 +2,6 @@ import "../navbar.css";
 import Logout from "./Logout";
 import "../navbar.css";
 import * as React from "react";
-// import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 
 const Navbar = ({ username, token, eraseAuth }) => {
