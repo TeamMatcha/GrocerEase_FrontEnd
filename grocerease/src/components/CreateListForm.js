@@ -46,7 +46,7 @@ const CreateListForm = ({ token }) => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container style={{ backgroundColor: "#FFF8F0" }}>
+      <Container style={{ backgroundColor: "#FFF8F0", marginLeft: "5px" }}>
         <Box
           sx={{
             display: "flex",
@@ -73,8 +73,7 @@ const CreateListForm = ({ token }) => {
         </Box>
       </Container>
 
-      <Container fixed style={{ backgroundColor: "#FFF8F0" }}>
-        <div>
+      <Container fixed style={{ backgroundColor: "#FFF8F0", marginLeft: "10px" }}>
           <label style={{ textAlign: "left", alignItems: "justify-content" }}>
             List Name
           </label>
@@ -84,10 +83,8 @@ const CreateListForm = ({ token }) => {
               style={{ width: "60%" }}
               className="createListInput"
               type="text"
-              // placeholder=" Create A New List"
               value={name}
               onChange={(event) => handleChange("name", event)}
-              // style={{ height: "14px" }}
             />
             <div>
               <Button
@@ -100,9 +97,6 @@ const CreateListForm = ({ token }) => {
               </Button>
             </div>
           </FormControl>
-          </div>
-          <div>
-        </div>
       </Container>
     </React.Fragment>
   );

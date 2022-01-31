@@ -1,13 +1,13 @@
 import Navbar from "./Navbar";
 import CreateListForm from "./CreateListForm";
 import SavedGroceryList from "./SavedGroceryList";
-// import { Typography, Container, Box } from "@mui/material";
+import { Typography, Container, Box } from "@mui/material";
 
 const Mainpage = ({ eraseAuth, token, username }) => {
   return (
     <>
     {/* this is the top header of the app */}
-      {/* <Container style={{ backgroundColor: "#EEB61B" }}>
+      <Container style={{ backgroundColor: "#EEB61B" }}>
       <Box
               sx={{
           display: "flex",
@@ -16,7 +16,7 @@ const Mainpage = ({ eraseAuth, token, username }) => {
         }}
         >
       </Box>
-      </Container> */}
+      </Container>
 
       
       <div>
