@@ -76,7 +76,7 @@ const CreateListForm = ({ token }) => {
       <Container fixed style={{ backgroundColor: "#FFF8F0" }}>
         <div>
           <label style={{ textAlign: "left", alignItems: "justify-content" }}>
-            List Name:
+            List Name
           </label>
 
           <FormControl fullWidth onSubmit={handleSubmit}>
