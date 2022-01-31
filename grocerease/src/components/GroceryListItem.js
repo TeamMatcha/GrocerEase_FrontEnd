@@ -54,21 +54,18 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
 
   return (
     <Box>
-      {/* <CardMedia
-        image={pattern}
-        height="10"
-        component="img"
-        style={{ height: "25px" }}
-      /> */}
       <Card
         sx={{
-          backgroundColor: "#EEB61B",
+          backgroundColor: "#FFF8F0",
           width: "364px",
-          margin: "2px",
+          margin: "10px",
         }}
       >
         <Box
           sx={{
+            backgroundImage: `url(${pattern})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
             display: "flex",
           }}
         >
@@ -88,6 +85,7 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
             display: "flex",
             justifyContent: "space-evenly",
             alignItems: "center",
+            backgroundColor: "#EEB61B",
           }}
         >
           <Typography

@@ -1,16 +1,5 @@
-import {
-  Container,
-  Card,
-  TextField,
-  Select,
-  MenuItem,
-  InputLabel,
-  Button,
-  Box,
-  FormControl,
-  rgbToHex,
-  Typography,
-} from "@mui/material";
+import { Card, Box, Typography } from "@mui/material";
+import pattern from "../pattern_hexagon.png";
 
 const CheckListItem = ({ item }) => {
   console.log(item);
@@ -25,7 +14,13 @@ const CheckListItem = ({ item }) => {
           flexDirection: "column",
         }}
       >
-        <Box>
+        <Box
+          sx={{
+            backgroundImage: `url(${pattern})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <input type="checkbox" />
         </Box>
         <Box
@@ -33,6 +28,7 @@ const CheckListItem = ({ item }) => {
             display: "flex",
             justifyContent: "space-evenly",
             alignItems: "center",
+            height: "25px",
           }}
         >
           <Typography
