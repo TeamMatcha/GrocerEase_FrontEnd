@@ -1,4 +1,4 @@
-import { Card, Box, Typography } from "@mui/material";
+import { Card, Box, Typography, Checkbox } from "@mui/material";
 import pattern from "../pattern_hexagon.png";
 
 const CheckListItem = ({ item }) => {
@@ -9,7 +9,7 @@ const CheckListItem = ({ item }) => {
         sx={{
           backgroundColor: "#EEB61B",
           width: "364px",
-          margin: "2px",
+          margin: "10px",
           display: "flex",
           flexDirection: "column",
         }}
@@ -19,16 +19,24 @@ const CheckListItem = ({ item }) => {
             backgroundImage: `url(${pattern})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            display: "flex",
+            height: "36px",
           }}
         >
-          <input type="checkbox" />
+          <Checkbox
+            sx={{
+              borderRadius: "5px",
+            }}
+            type="checkbox"
+          />
         </Box>
+
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-evenly",
             alignItems: "center",
-            height: "25px",
+            height: "56px",
           }}
         >
           <Typography

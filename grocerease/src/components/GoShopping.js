@@ -2,15 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import CheckListItem from "./CheckListItem";
-import {
-  Container,
-  TextField,
-  Select,
-  MenuItem,
-  InputLabel,
-  Button,
-  Box,
-} from "@mui/material";
+import { Container, Button, Box, Typography } from "@mui/material";
 import confetti from "canvas-confetti";
 
 const GoShopping = ({ token }) => {
@@ -37,7 +29,6 @@ const GoShopping = ({ token }) => {
       }
 
       var particleCount = 50 * (timeLeft / duration);
-      // since particles fall down, start a bit higher than random
       confetti(
         Object.assign({}, defaults, {
           particleCount,
@@ -97,17 +88,18 @@ const GoShopping = ({ token }) => {
       }}
       component="div"
     >
-      <Box
+      <Typography
         sx={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           height: "32px",
           fontWeight: "900",
+          fontSize: "48px",
         }}
       >
         {listName}
-      </Box>
+      </Typography>
 
       <Box
         sx={{

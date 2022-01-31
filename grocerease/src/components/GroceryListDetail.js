@@ -4,20 +4,15 @@ import "../groceryListDetail.css";
 import GroceryListItem from "./GroceryListItem";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import {
-  Container,
-  TextField,
-  Select,
-  MenuItem,
-  InputLabel,
-  Button,
-  Box,
-  FormControl,
-  rgbToHex,
-} from "@mui/material";
-import pattern from "../pattern_hexagon.png";
-import produceBar from "../images/produceBar.png";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+
+import { Container, TextField, MenuItem, Button, Box } from "@mui/material";
 
 const GroceryListDetail = ({ token }) => {
   const location = useLocation();
@@ -124,8 +119,6 @@ const GroceryListDetail = ({ token }) => {
         alignItems: "center",
         flexDirection: "column",
         backgroundColor: "#FFF8F0",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         padding: "16px",
         minHeight: "100vh",
       }}
@@ -152,7 +145,7 @@ const GroceryListDetail = ({ token }) => {
               height: "32px",
               color: "black",
               borderColor: "black",
-              ".MuiOutlinedInput-notchedOutline": { outlineColor: "#000" },
+              ".MuiOutlinedInput-": { outlineColor: "#000" },
             }}
             onChange={(event) => setListName(event.target.value)}
             value={listName}
@@ -178,21 +171,6 @@ const GroceryListDetail = ({ token }) => {
                 placeholder="Add products"
                 onChange={(event) => setValue(event.target.value)}
               ></TextField>
-            </Box>
-            <Box>
-              <Button
-                color="special"
-                sx={{
-                  fontSize: "10px",
-                  marginTop: "6px",
-                  marginLeft: "4px",
-                }}
-                variant="contained"
-                onClick={onAddProduct}
-                type="submit"
-              >
-                Add
-              </Button>
             </Box>
           </Box>
 
@@ -232,7 +210,23 @@ const GroceryListDetail = ({ token }) => {
               </MenuItem>
               <MenuItem value="Health and Beauty">Health and Beauty</MenuItem>
               <MenuItem value="Pet Care">Pet Care</MenuItem>
+              <MenuItem value="Frozen Goods">Frozen Goods</MenuItem>
             </TextField>
+            <Box>
+              <Button
+                color="special"
+                sx={{
+                  fontSize: "10px",
+                  marginTop: "6px",
+                  marginLeft: "4px",
+                }}
+                variant="contained"
+                onClick={onAddProduct}
+                type="submit"
+              >
+                Add
+              </Button>
+            </Box>
           </Box>
           <Box
             sx={{

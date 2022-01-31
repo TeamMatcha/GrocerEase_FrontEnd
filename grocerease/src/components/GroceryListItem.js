@@ -2,20 +2,14 @@ import { useState } from "react";
 import axios from "axios";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import {
-  Typography,
-  TextField,
-  Select,
-  MenuItem,
-  InputLabel,
-  Button,
-  Box,
-  Card,
-  CardMedia,
-  rgbToHex,
-} from "@mui/material";
-import CardContent from "@mui/material/CardContent";
+import { Typography, Box, Card } from "@mui/material";
 import pattern from "../pattern_hexagon.png";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 import "../groceryListItem.css";
 
 const GroceryListItem = ({ item, token, onGrabList }) => {
