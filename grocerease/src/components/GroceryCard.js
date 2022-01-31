@@ -8,19 +8,31 @@ import {
   Button,
   CardContent,
   Typography,
+  Box,
 } from "@mui/material";
 import pattern from "../pattern_hexagon.png";
+import { flexbox } from "@mui/system";
 
 export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
   const navigate = useNavigate();
 
   return (
-    <Card style={{ marginTop: "25px", marginBottom: "25px" }}>
+    <div>
+    <Card style={{ marginTop: "35px", marginBottom: "25px", width: "60%", }}>
+    <Box 
+    sx={{
+      display: flexbox, 
+      mx:"auto",
+    }}
+    >
+
+    </Box>
       <CardMedia
         image={pattern}
-        height="10"
+        height="14"
         component="img"
-        style={{ height: "100px" }}
+        style={{ height: "14px" }}
+        
       />
       <CardContent style={{ backgroundColor: "#EEB61B" }}>
         <Typography
@@ -65,5 +77,6 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
         </Button>
       </CardActions>
     </Card>
+    </div>
   );
 };
