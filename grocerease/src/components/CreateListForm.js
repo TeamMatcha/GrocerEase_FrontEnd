@@ -3,7 +3,15 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../createListForm.css";
 import * as React from "react";
-import {CssBaseline, Container, Button, Box, Typography, FormControl, TextField }from "@mui/material/";
+import {
+  CssBaseline,
+  Container,
+  Button,
+  Box,
+  Typography,
+  FormControl,
+  TextField,
+} from "@mui/material/";
 
 const CreateListForm = ({ token }) => {
   const [name, setName] = useState("");
@@ -36,9 +44,9 @@ const CreateListForm = ({ token }) => {
   };
 
   return (
-      <React.Fragment>
-        <CssBaseline />
-        <Container style={{backgroundColor: "#FFF8F0"}}>
+    <React.Fragment>
+      <CssBaseline />
+      <Container style={{ backgroundColor: "#FFF8F0" }}>
         <Box
           sx={{
             display: "flex",
@@ -63,39 +71,40 @@ const CreateListForm = ({ token }) => {
             Ease
           </Typography>
         </Box>
-        </Container>
+      </Container>
 
-        <Container fixed style={{ backgroundColor: "#FFF8F0" }}>
-        
-          <div>
-          <label style={{textAlign: "left", alignItems: "justify-content"}}
-          >List Name:
+      <Container fixed style={{ backgroundColor: "#FFF8F0" }}>
+        <div>
+          <label style={{ textAlign: "left", alignItems: "justify-content" }}>
+            List Name:
           </label>
 
-            <FormControl fullWidth onSubmit={handleSubmit}>
-              <TextField style={{width: "60%"}}
-              
-                className="createListInput"
-                type="text"
-                // placeholder=" Create A New List"
-                value={name}
-                onChange={(event) => handleChange("name", event)}
-                // style={{ height: "14px" }}
-
-              />
-<div>
-
-<Button style={{color: "black"}} size="medium" onClick={handleSubmit}>
-              {" "}
-              Submit {" "}
-            </Button>
-</div>
-            </FormControl>
-          {/* </div>
-          <div> */}
+          <FormControl fullWidth onSubmit={handleSubmit}>
+            <TextField
+              style={{ width: "60%" }}
+              className="createListInput"
+              type="text"
+              // placeholder=" Create A New List"
+              value={name}
+              onChange={(event) => handleChange("name", event)}
+              // style={{ height: "14px" }}
+            />
+            <div>
+              <Button
+                style={{ color: "black" }}
+                size="medium"
+                onClick={handleSubmit}
+              >
+                {" "}
+                Submit{" "}
+              </Button>
+            </div>
+          </FormControl>
           </div>
-        </Container>
-      </React.Fragment>
+          <div>
+        </div>
+      </Container>
+    </React.Fragment>
   );
 };
 

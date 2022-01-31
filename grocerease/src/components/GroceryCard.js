@@ -9,26 +9,26 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import pattern from "../pattern_hexagon.png";
+import pattern1 from "../images/pattern1.png";
 
 export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
   const navigate = useNavigate();
 
   return (
     <div>
-    <Card  style={{ marginTop: "35px", marginBottom: "25px", marginLeft: "60px", width: "60%", }}
+    <Card  style={{ marginTop: "15px", marginBottom: "5px", marginLeft: "80px", width: "40%", }}
 >
 
       <CardMedia
-        image={pattern}
-        height="14"
+        image={pattern1}
+        height="20"
         component="img"
-        style={{ height: "14px" }}
+        style={{ height: "40px" }}
         
       />
       <CardContent style={{ backgroundColor: "#EEB61B" }}>
         <Typography
-          style={{ backgroundColor: "#EEB61B" }}
+          style={{ backgroundColor: "#EEB61B", height: "50px" }}
           gutterBottom
           variant="h5"
           component="div"
