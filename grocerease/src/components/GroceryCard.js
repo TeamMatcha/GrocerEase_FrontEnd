@@ -8,10 +8,8 @@ import {
   Button,
   CardContent,
   Typography,
-  Box,
 } from "@mui/material";
 import pattern from "../pattern_hexagon.png";
-import { flexbox } from "@mui/system";
 
 export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
   const navigate = useNavigate();

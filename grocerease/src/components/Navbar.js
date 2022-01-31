@@ -16,6 +16,7 @@ const Navbar = ({ username, token, eraseAuth }) => {
             }}
             component="div">
       <Box 
+      
       textAlign="right" m={1}
       >
 
