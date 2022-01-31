@@ -16,7 +16,9 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
 
   return (
     <div>
-    <Card style={{ marginTop: "35px", marginBottom: "25px", width: "60%", }}>
+    <Card  style={{ marginTop: "35px", marginBottom: "25px", marginLeft: "60px", width: "60%", }}
+>
+
       <CardMedia
         image={pattern}
         height="14"
