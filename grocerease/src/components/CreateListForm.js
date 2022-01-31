@@ -48,7 +48,7 @@ const CreateListForm = ({ token }) => {
             sx={{
               fontFamily: "Libre Franklin",
               fontWeight: 900,
-              fontSize: "60px",
+              fontSize: "30px",
             }}
           >
             Grocer
@@ -56,7 +56,7 @@ const CreateListForm = ({ token }) => {
           <Typography
             sx={{
               fontWeight: "100 !important",
-              fontSize: "60px",
+              fontSize: "30px",
               fontStyle: "italic",
             }}
           >
