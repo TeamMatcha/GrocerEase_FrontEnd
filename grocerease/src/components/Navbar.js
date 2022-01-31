@@ -6,7 +6,7 @@ import {Container, Typography, Box }from "@mui/material/";
 
 const Navbar = ({ username, token, eraseAuth }) => {
   return (
-      <Container fixed style={{ backgroundColor: "#FFF8F0" }}>
+      <Container style={{ backgroundColor: "#FFF8F0" }}>
       <Typography 
               sx={{
               fontFamily: "Libre Franklin",

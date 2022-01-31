@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../navbar.css";
+import { Container, Typography } from "@mui/material";
 
 const Logout = ({ username, token, eraseAuth }) => {
   const navigate = useNavigate();
@@ -23,14 +24,20 @@ const Logout = ({ username, token, eraseAuth }) => {
   };
 
   return (
-    <div onClick={onClick}>
+    <Container  style={{ backgroundColor: "#FFF8F0" , padding: "15px", fullWidth: "auto" , color: "black" }}
+    onClick={onClick}>
+    <Typography
+    >
+
       <i
-        class="f4 fw6 db dark-blue no-underline underline-hover logout_button"
+        // class="f4 fw6 db dark-blue no-underline underline-hover logout_button"
         href="#0"
       >
         Logout
       </i>
-    </div>
+      </Typography>
+
+    </Container>
   );
 };
 
