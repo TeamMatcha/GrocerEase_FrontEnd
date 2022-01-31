@@ -26,13 +26,13 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
         style={{ height: "40px" }}
         
       />
-      <CardContent style={{ backgroundColor: "#EEB61B" }}>
+      <CardContent style={{ backgroundColor: "#FFF8F0" }}>
         <Typography
-          style={{ backgroundColor: "#EEB61B", height: "50px" }}
+          style={{ backgroundColor:"#FFF8F0", height: "50px" }}
           gutterBottom
           variant="h5"
           component="div"
-          color="#FFF8F0"
+          color="#EEB61B"
           fontWeight= "bold"
         >
           {name}
@@ -50,6 +50,7 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
 
       <CardActions style={{ backgroundColor: "#EEB61B" }}>
         <Button
+        
           style={{ color: "#FFF8F0" }}
           size="small"
           onClick={() => {
