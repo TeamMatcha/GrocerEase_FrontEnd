@@ -19,14 +19,6 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
   return (
     <div>
     <Card style={{ marginTop: "35px", marginBottom: "25px", width: "60%", }}>
-    <Box 
-    sx={{
-      display: flexbox, 
-      mx:"auto",
-    }}
-    >
-
-    </Box>
       <CardMedia
         image={pattern}
         height="14"
