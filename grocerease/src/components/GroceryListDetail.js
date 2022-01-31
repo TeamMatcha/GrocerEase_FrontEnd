@@ -140,6 +140,9 @@ const GroceryListDetail = ({ token }) => {
             label="List Name"
             variant="outlined"
             color="primary"
+            value={listName}
+            onChange={(event) => setListName(event.target.value)}
+            component="div"
             sx={{
               width: "364px",
               height: "32px",
@@ -147,9 +150,6 @@ const GroceryListDetail = ({ token }) => {
               borderColor: "black",
               ".MuiOutlinedInput-": { outlineColor: "#000" },
             }}
-            onChange={(event) => setListName(event.target.value)}
-            value={listName}
-            component="div"
           />
           <Box
             sx={{
@@ -158,28 +158,37 @@ const GroceryListDetail = ({ token }) => {
           >
             <Box>
               <TextField
+                id="outlined-basic"
+                placeholder="Add Products"
+                variant="outlined"
+                color="primary"
+                value={value}
+                onChange={(event) => setValue(event.target.value)}
+                component="div"
                 sx={{
-                  marginTop: "5px",
-                  width: "295px",
+                  marginTop: "10px",
+                  width: "364px",
                   height: "32px",
                   color: "black",
                   borderColor: "black",
+                  ".MuiOutlinedInput-": { outlineColor: "#000" },
                 }}
-                id="outlined-basic"
-                variant="outlined"
-                value={value}
-                placeholder="Add products"
-                onChange={(event) => setValue(event.target.value)}
               ></TextField>
             </Box>
           </Box>
 
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+            }}
+          >
             <TextField
               sx={{
                 "& .MuiSelect-select": { padding: "3px 10px" },
                 marginTop: "10px",
                 "& label": { background: "#FFF8F0", px: 1, py: 0 },
+                width: "297px",
+                height: "32px",
               }}
               select
               label="Category"
@@ -217,8 +226,10 @@ const GroceryListDetail = ({ token }) => {
                 color="special"
                 sx={{
                   fontSize: "10px",
-                  marginTop: "6px",
+                  marginTop: "10px",
                   marginLeft: "4px",
+                  height: "27px",
+                  fontWeight: "100",
                 }}
                 variant="contained"
                 onClick={onAddProduct}
@@ -228,38 +239,16 @@ const GroceryListDetail = ({ token }) => {
               </Button>
             </Box>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "6px",
-              backgroundColor: "#FFF8F0",
-            }}
-          >
-            <Button
-              color="special"
-              sx={{
-                margin: "2px",
-                color: "black",
-              }}
-              variant="contained"
-              onClick={saveList}
-            >
-              Save List
-            </Button>
-            <Button
-              color="special"
-              sx={{
-                margin: "2px",
-                color: "black",
-              }}
-              variant="contained"
-              onClick={() => navigate(`/go_shopping?id=${listId}`)}
-            >
-              Start Shopping
-            </Button>
-          </Box>
         </Box>
+      </Box>
+      <Box>
+        <TableHead>
+          <TableRow>
+            <TableCell>Product</TableCell>
+            <TableCell align="right">Count</TableCell>
+            <TableCell align="right">Category</TableCell>
+          </TableRow>
+        </TableHead>
       </Box>
       <Box>
         {items.map((item) => {
@@ -267,6 +256,41 @@ const GroceryListDetail = ({ token }) => {
             <GroceryListItem onGrabList={GrabList} item={item} token={token} />
           );
         })}
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          margin: "6px",
+          backgroundColor: "#FFF8F0",
+        }}
+      >
+        <Button
+          color="special"
+          sx={{
+            height: "32px",
+            margin: "2px",
+            color: "black",
+            fontWeight: "100",
+          }}
+          variant="contained"
+          onClick={saveList}
+        >
+          Save List
+        </Button>
+        <Button
+          color="special"
+          sx={{
+            height: "32px",
+            margin: "2px",
+            color: "black",
+            fontWeight: "100",
+          }}
+          variant="contained"
+          onClick={() => navigate(`/go_shopping?id=${listId}`)}
+        >
+          Start Shopping
+        </Button>
       </Box>
     </Container>
   );

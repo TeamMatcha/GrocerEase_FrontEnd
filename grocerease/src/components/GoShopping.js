@@ -93,9 +93,9 @@ const GoShopping = ({ token }) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          height: "32px",
-          fontWeight: "900",
-          fontSize: "48px",
+          height: "16px",
+          fontWeight: "600",
+          fontSize: "32px",
         }}
       >
         {listName}
@@ -113,13 +113,15 @@ const GoShopping = ({ token }) => {
       </Box>
       <div>
         <Button
+          color="special"
+          variant="contained"
+          onClick={doneShopping}
           sx={{
+            height: "32px",
             margin: "2px",
             color: "black",
-            borderColor: "black",
+            fontWeight: "100",
           }}
-          variant="outlined"
-          onClick={doneShopping}
         >
           Done Shopping
         </Button>
