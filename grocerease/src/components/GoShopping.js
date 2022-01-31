@@ -2,7 +2,17 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import CheckListItem from "./CheckListItem";
-
+import {
+  Container,
+  TextField,
+  Select,
+  MenuItem,
+  InputLabel,
+  Button,
+  Box,
+  FormControl,
+  rgbToHex,
+} from "@mui/material";
 const GoShopping = ({ token }) => {
   const location = useLocation();
   let listId = location.search.split("=")[1];
@@ -40,23 +50,55 @@ const GoShopping = ({ token }) => {
       });
   }, []);
   return (
-    <>
-      <h1>{listName}</h1>
-      <div>
+    <Container
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        backgroundColor: "#FFF8F0",
+        padding: "16px",
+        minHeight: "100vh",
+      }}
+      component="div"
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          height: "32px",
+          fontWeight: "900",
+        }}
+      >
+        {listName}
+      </Box>
+
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         {items.map((item) => {
           return <CheckListItem item={item} />;
         })}
-      </div>
+      </Box>
       <div>
-        <button
+        <Button
+          sx={{
+            margin: "2px",
+            color: "black",
+            borderColor: "black",
+          }}
+          variant="outlined"
           onClick={() => {
             navigate("/lists");
           }}
         >
           Done Shopping
-        </button>
+        </Button>
       </div>
-    </>
+    </Container>
   );
 };
 
