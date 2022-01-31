@@ -3,9 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../createListForm.css";
 import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
+import {CssBaseline, Container, Button, Box, Typography }from "@mui/material/";
 
 const CreateListForm = ({ token }) => {
   const [name, setName] = useState("");
@@ -40,7 +38,34 @@ const CreateListForm = ({ token }) => {
   return (
       <React.Fragment>
         <CssBaseline />
-        <Container style={{ backgroundColor: "#FFF8F0" }}>
+        <Container fixed style={{backgroundColor: "#FFF8F0"}}>
+        <Box
+          sx={{
+            display: "flex",
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: "Libre Franklin",
+              fontWeight: 900,
+              fontSize: "60px",
+            }}
+          >
+            Grocer
+          </Typography>
+          <Typography
+            sx={{
+              fontWeight: "100 !important",
+              fontSize: "60px",
+              fontStyle: "italic",
+            }}
+          >
+            Ease
+          </Typography>
+        </Box>
+        </Container>
+
+        <Container fixed style={{ backgroundColor: "#FFF8F0" }}>
           <div>
             <form onSubmit={handleSubmit}>
               <label>List Name:</label>

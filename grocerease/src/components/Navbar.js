@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 const Navbar = ({ username, token, eraseAuth }) => {
   return (
     <div>
-      <Container style={{ backgroundColor: "#EEB61B" }}>
+      <Container style={{ backgroundColor: "#FFF8F0" }}>
         <div className="logout_button">
           <Logout
             username={username}
