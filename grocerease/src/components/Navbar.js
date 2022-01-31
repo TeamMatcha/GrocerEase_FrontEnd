@@ -2,22 +2,35 @@ import "../navbar.css";
 import Logout from "./Logout";
 import "../navbar.css";
 import * as React from "react";
-import Container from "@mui/material/Container";
+import {Container, Typography, Box, textAlign }from "@mui/material/";
 
 const Navbar = ({ username, token, eraseAuth }) => {
   return (
-    <div>
-      <Container style={{ backgroundColor: "#FFF8F0" }}>
-        <div className="logout_button">
+      <Container fixed style={{ backgroundColor: "#FFF8F0" }}>
+      <Typography 
+              sx={{
+              fontFamily: "Libre Franklin",
+              fontWeight: 90,
+              fontSize: "30px",
+
+            }}
+            >
+      <Box 
+      textAlign="right" m={1}
+      >
+
+
           <Logout
             username={username}
             token={token}
             eraseAuth={eraseAuth}
             className="logout_button"
           />
-        </div>
+          </Box>
+          
+          </Typography>
+
       </Container>
-    </div>
   );
 };
 

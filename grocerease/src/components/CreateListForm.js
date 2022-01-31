@@ -38,7 +38,7 @@ const CreateListForm = ({ token }) => {
   return (
       <React.Fragment>
         <CssBaseline />
-        <Container fixed style={{backgroundColor: "#FFF8F0"}}>
+        <Container style={{backgroundColor: "#FFF8F0"}}>
         <Box
           sx={{
             display: "flex",
