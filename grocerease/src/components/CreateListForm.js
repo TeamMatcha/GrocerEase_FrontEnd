@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../createListForm.css";
 import * as React from "react";
-import {CssBaseline, Container, Button, Box, Typography }from "@mui/material/";
+import {CssBaseline, Container, Button, Box, Typography, FormControl, TextField }from "@mui/material/";
 
 const CreateListForm = ({ token }) => {
   const [name, setName] = useState("");
@@ -66,23 +66,33 @@ const CreateListForm = ({ token }) => {
         </Container>
 
         <Container fixed style={{ backgroundColor: "#FFF8F0" }}>
+        
           <div>
-            <form onSubmit={handleSubmit}>
-              <label>List Name:</label>
-              <input
+          <label style={{textAlign: "left", alignItems: "justify-content"}}
+          >List Name:
+          </label>
+
+            <FormControl fullWidth onSubmit={handleSubmit}>
+              <TextField style={{width: "60%"}}
+              
                 className="createListInput"
                 type="text"
-                placeholder="List's Name"
+                // placeholder=" Create A New List"
                 value={name}
                 onChange={(event) => handleChange("name", event)}
+                // style={{ height: "14px" }}
+
               />
-            </form>
-          </div>
-          <div>
-            <Button size="medium" onClick={handleSubmit}>
+<div>
+
+<Button style={{color: "black"}} size="medium" onClick={handleSubmit}>
               {" "}
-              Create New List{" "}
+              Submit {" "}
             </Button>
+</div>
+            </FormControl>
+          {/* </div>
+          <div> */}
           </div>
         </Container>
       </React.Fragment>
