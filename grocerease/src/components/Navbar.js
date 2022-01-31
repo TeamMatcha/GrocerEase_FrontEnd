@@ -14,7 +14,7 @@ const Navbar = ({ username, token, eraseAuth }) => {
               fontSize: "30px",
 
             }}
-            >
+            component="div">
       <Box 
       textAlign="right" m={1}
       >

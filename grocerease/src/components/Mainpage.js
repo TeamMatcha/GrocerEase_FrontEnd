@@ -7,9 +7,6 @@ const Mainpage = ({ eraseAuth, token, username }) => {
   return (
     <>
       <Container style={{ backgroundColor: "#EEB61B" }}>
-        <Typography variant="h5" color="#FFF8F0" gutterBottom component="div">
-          GrocerEase
-        </Typography>
       </Container>
       <div>
         <Navbar eraseAuth={eraseAuth} token={token} username={username} />
