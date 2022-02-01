@@ -42,7 +42,7 @@ export default function Login({ isLoggedIn, setAuth }) {
         justifyContent: "flex-end",
         flexDirection: "column",
         height: "100vh",
-        backgroundColor: "#EEB61B",
+        backgroundColor: "white",
         backgroundImage: `url(${hero})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -88,7 +88,7 @@ export default function Login({ isLoggedIn, setAuth }) {
             margin: 0,
           }}
         >
-          shop quick, easy, and in a breeze!
+          Shopping can be a breeze!
         </Typography>
       </Box>
       <Box

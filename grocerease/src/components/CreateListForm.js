@@ -3,9 +3,15 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../createListForm.css";
 import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
+import {
+  CssBaseline,
+  Container,
+  Button,
+  // Box,
+  // Typography,
+  FormControl,
+  TextField,
+} from "@mui/material/";
 
 const CreateListForm = ({ token }) => {
   const [name, setName] = useState("");
@@ -38,29 +44,40 @@ const CreateListForm = ({ token }) => {
   };
 
   return (
-      <React.Fragment>
-        <CssBaseline />
-        <Container style={{ backgroundColor: "#FFF8F0" }}>
-          <div>
-            <form onSubmit={handleSubmit}>
-              <label>List Name:</label>
-              <input
-                className="createListInput"
-                type="text"
-                placeholder="List's Name"
-                value={name}
-                onChange={(event) => handleChange("name", event)}
-              />
-            </form>
-          </div>
-          <div>
-            <Button size="medium" onClick={handleSubmit}>
-              {" "}
-              Create New List{" "}
-            </Button>
-          </div>
-        </Container>
-      </React.Fragment>
+    <React.Fragment>
+      <CssBaseline />
+      
+      <Container fixed style={{ backgroundColor: "#FFF8F0", marginLeft: "10px" }}>
+          <label style={{ textAlign: "left", alignItems: "justify-content", }}>
+            List Name
+          </label>
+
+          <FormControl fullWidth onSubmit={handleSubmit}>
+            <TextField
+              style={{ width: "60%" }}
+              className="createListInput"
+              type="text"
+              value={name}
+              onChange={(event) => handleChange("name", event)}
+            />
+            <Button
+            sx={{
+            display:"flex",
+            justifyContent: "flex-end",
+            marginRight: "50px",
+            color: "black",
+
+          }}
+
+                onClick={handleSubmit}
+
+              >
+                {" "}
+                Submit{" "}
+              </Button>
+          </FormControl>
+      </Container>
+    </React.Fragment>
   );
 };
 

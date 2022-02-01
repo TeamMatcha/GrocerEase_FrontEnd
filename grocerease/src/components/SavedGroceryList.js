@@ -62,10 +62,10 @@ const SavedGroceryList = ({ token }) => {
 
       <Container style={{ backgroundColor: "#FFF8F0" }}>
         <div>
-          <div className="search-filter">
+          <div className="search-filter" size="medium" padding="50px">
             <div>
               <label>Sort By:</label>
-              <select onChange={SortList} className="sort-by">
+              <select onChange={SortList} className="sort-by" >
                 <option value="date_created">Date</option>
                 <option value="name">Name</option>
               </select>
@@ -83,6 +83,7 @@ const SavedGroceryList = ({ token }) => {
                 />
               );
             })}
+
         </div>
       </Container>
     </React.Fragment>

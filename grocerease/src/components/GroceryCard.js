@@ -9,26 +9,32 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import pattern from "../pattern_hexagon.png";
+import pattern1 from "../images/pattern1.png";
 
 export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
   const navigate = useNavigate();
 
   return (
-    <Card style={{ marginTop: "25px", marginBottom: "25px" }}>
-      <CardMedia
-        image={pattern}
-        height="10"
+    <div>
+    <Card  style={{ marginTop: "15px", marginBottom: "5px", marginLeft: "50px", marginRight: "45px",  width: "70", height: "95px" ,  }}
+>
+<div>
+      <CardMedia 
+        image={pattern1}
         component="img"
-        style={{ height: "100px" }}
+        style={{ height: "40px",}}
+
+        
       />
-      <CardContent style={{ backgroundColor: "#EEB61B" }}>
+      </div>
+      <CardContent style={{ backgroundColor: "#FFF8F0" }}>
         <Typography
-          style={{ backgroundColor: "#EEB61B" }}
+          style={{ backgroundColor:"#FFF8F0", height: "50px" }}
           gutterBottom
           variant="h5"
           component="div"
-          color="#FFF8F0"
+          color="#EEB61B"
+          fontWeight= "bold"
         >
           {name}
         </Typography>
@@ -41,10 +47,11 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
           ></i>
           {moment(date_created).format("MMMM Do YYYY")}
         </Typography>
-      </CardContent>
+      
 
       <CardActions style={{ backgroundColor: "#EEB61B" }}>
         <Button
+        
           style={{ color: "#FFF8F0" }}
           size="small"
           onClick={() => {
@@ -52,6 +59,7 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
           }}
         >
           Details
+          {/* <i class="fas fa-search"></i> */}
         </Button>
         <Button
           style={{ color: "#FFF8F0" }}
@@ -62,8 +70,12 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
           }}
         >
           Delete
+          {/* <i class="fas fa-trash"></i> */}
         </Button>
       </CardActions>
+      </CardContent>
+
     </Card>
+    </div>
   );
 };
