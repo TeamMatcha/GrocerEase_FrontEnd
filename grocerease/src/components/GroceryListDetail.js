@@ -121,7 +121,7 @@ const GroceryListDetail = ({ token }) => {
         flexDirection: "column",
         backgroundColor: "#FFF8F0",
         padding: "16px",
-        minHeight: "100vh",
+        minHeight: "95vh",
       }}
       component="div"
     >
@@ -130,7 +130,8 @@ const GroceryListDetail = ({ token }) => {
           maxHeight: "95vh",
           display: "flex",
           flexDirection: "column",
-          maxWidth: "275px",
+          maxWidth: "300px",
+          mr: 1.1,
         }}
       >
         <Box
@@ -159,7 +160,7 @@ const GroceryListDetail = ({ token }) => {
                 onChange={(event) => setListName(event.target.value)}
                 component="div"
                 sx={{
-                  width: "364px",
+                  width: "320px",
                   height: "32px",
                 }}
               />
@@ -179,7 +180,7 @@ const GroceryListDetail = ({ token }) => {
                     component="div"
                     sx={{
                       marginTop: "16px",
-                      width: "364px",
+                      width: "320px",
                       height: "32px",
                     }}
                   ></TextField>
@@ -189,6 +190,7 @@ const GroceryListDetail = ({ token }) => {
               <Box
                 sx={{
                   display: "flex",
+                  width: "320px",
                 }}
               >
                 <TextField
@@ -290,7 +292,7 @@ const GroceryListDetail = ({ token }) => {
             </Box>
           </Box>
         </Box>
-        <Box sx={{ overflowY: "auto", height: "100%" }}>
+        <Box sx={{ overflowY: "scroll", height: "100%" }}>
           {items.map((item) => {
             return (
               <GroceryListItem
