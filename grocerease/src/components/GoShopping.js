@@ -84,62 +84,69 @@ const GoShopping = ({ token }) => {
         flexDirection: "column",
         backgroundColor: "#FFF8F0",
         padding: "16px",
-        minHeight: "100vh",
+        minHeight: "95vh",
       }}
       component="div"
     >
-      <Typography
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          height: "16px",
-          fontWeight: "600",
-          fontSize: "32px",
-        }}
-      >
-        {listName}
-      </Typography>
       <Box
         sx={{
+          maxHeight: "95vh",
           display: "flex",
-          mt: 3,
-          pl: "8rem",
+          flexDirection: "column",
+          maxWidth: "316px",
         }}
       >
-        <Typography sx={{ width: "8.5rem", pl: 1 }}>Product</Typography>
-        <Typography sx={{ width: "4rem" }}>Count</Typography>
-        <Typography sx={{ width: "11rem" }}>Category</Typography>
-      </Box>
+        <Box>
+          <Typography
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              height: "10px",
+              fontWeight: "600",
+              fontSize: "24px",
+            }}
+          >
+            {listName}
+          </Typography>
 
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          mb: 3,
-          mx: "auto",
-        }}
-      >
-        {items.map((item) => {
-          return <CheckListItem item={item} />;
-        })}
+          <Box
+            sx={{
+              maxHeight: "95vh",
+              display: "flex",
+              flexDirection: "column",
+              maxWidth: "300px",
+            }}
+          >
+            <Typography sx={{}}>Product</Typography>
+            <Typography sx={{}}>Count</Typography>
+            <Typography sx={{}}>Category</Typography>
+          </Box>
+
+          <Box sx={{ overflowY: "auto", height: "100%" }}>
+            {items.map((item) => {
+              return <CheckListItem item={item} />;
+            })}
+          </Box>
+
+          <Box>
+            <Button
+              color="special"
+              variant="contained"
+              onClick={doneShopping}
+              sx={{
+                height: "32px",
+                margin: "2px",
+                mx: "auto",
+                color: "black",
+                fontWeight: "100",
+              }}
+            >
+              Done Shopping
+            </Button>
+          </Box>
+        </Box>
       </Box>
-      <div>
-        <Button
-          color="special"
-          variant="contained"
-          onClick={doneShopping}
-          sx={{
-            height: "32px",
-            margin: "2px",
-            mx: "auto",
-            color: "black",
-            fontWeight: "100",
-          }}
-        >
-          Done Shopping
-        </Button>
-      </div>
     </Container>
   );
 };

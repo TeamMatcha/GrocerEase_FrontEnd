@@ -130,6 +130,7 @@ const GroceryListDetail = ({ token }) => {
           maxHeight: "95vh",
           display: "flex",
           flexDirection: "column",
+          maxWidth: "316px",
         }}
       >
         <Box
@@ -147,7 +148,6 @@ const GroceryListDetail = ({ token }) => {
                 flexDirection: "column",
                 justifyContent: "center",
                 padding: "16px",
-                borderRadius: "5px",
               }}
             >
               <TextField
@@ -161,9 +161,6 @@ const GroceryListDetail = ({ token }) => {
                 sx={{
                   width: "364px",
                   height: "32px",
-                  color: "black",
-                  borderColor: "black",
-                  ".MuiOutlinedInput-": { outlineColor: "#000" },
                 }}
               />
               <Box
@@ -181,12 +178,9 @@ const GroceryListDetail = ({ token }) => {
                     onChange={(event) => setValue(event.target.value)}
                     component="div"
                     sx={{
-                      marginTop: "10px",
+                      marginTop: "16px",
                       width: "364px",
                       height: "32px",
-                      color: "black",
-                      borderColor: "black",
-                      ".MuiOutlinedInput-": { outlineColor: "#000" },
                     }}
                   ></TextField>
                 </Box>
@@ -247,6 +241,7 @@ const GroceryListDetail = ({ token }) => {
                       marginLeft: "4px",
                       height: "27px",
                       fontWeight: "100",
+                      color: "#FFF8F0",
                     }}
                     variant="contained"
                     onClick={onAddProduct}
@@ -261,12 +256,38 @@ const GroceryListDetail = ({ token }) => {
           <Box
             sx={{
               display: "flex",
+              pr: 5,
             }}
           >
-            <Typography sx={{ mr: 4 }}>Product</Typography>
-            <Typography sx={{ mr: 6 }}>Count</Typography>
-            <Typography sx={{ width: "2rem" }}>Category</Typography>
-            <Typography sx={{ width: "4rem" }}></Typography>
+            <Box
+              sx={{
+                width: "75px",
+                display: "flex",
+              }}
+            >
+              <Typography>Product</Typography>
+            </Box>
+            <Box>
+              <Typography
+                sx={{
+                  pr: 1,
+                }}
+              >
+                Count
+              </Typography>
+            </Box>
+            <Box>
+              <Typography
+                sx={{
+                  pl: 1.4,
+                }}
+              >
+                Category
+              </Typography>
+            </Box>
+            <Box>
+              <Typography sx={{}}></Typography>
+            </Box>
           </Box>
         </Box>
         <Box sx={{ overflowY: "auto", height: "100%" }}>
@@ -293,7 +314,7 @@ const GroceryListDetail = ({ token }) => {
             sx={{
               height: "32px",
               margin: "2px",
-              color: "black",
+              color: "#FFF8F0",
               fontWeight: "100",
             }}
             variant="contained"
@@ -306,7 +327,7 @@ const GroceryListDetail = ({ token }) => {
             sx={{
               height: "32px",
               margin: "2px",
-              color: "black",
+              color: "#FFF8F0",
               fontWeight: "100",
             }}
             variant="contained"

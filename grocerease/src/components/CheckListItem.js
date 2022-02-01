@@ -2,18 +2,25 @@ import * as React from "react";
 import { Card, Box, Typography, Checkbox, Input } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
+import Paper from "@mui/material/Paper";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TablePagination from "@mui/material/TablePagination";
+import TableRow from "@mui/material/TableRow";
 
 const CheckListItem = ({ item }) => {
   const [checked, setChecked] = React.useState(false);
   return (
-    <Box
+    <TableRow
       key={item.name}
       sx={{
         display: "flex",
+        background: "#EEB61B",
         color: "#FFF8F0",
         padding: 0,
-        "& > *": { border: "1px solid black", px: 2, background: "#EEB61B" },
-        "& *": { m: 0, py: "3px", color: "#FFF8F0" },
         "&:after": {
           content: '""',
           height: "2px",
@@ -25,26 +32,21 @@ const CheckListItem = ({ item }) => {
         },
       }}
     >
-      <Box sx={{ display: "flex", alignItems: "center" }}>
+      <TableCell sx={{ display: "flex", alignItems: "center" }}>
         <Checkbox
           checked={checked}
           onChange={() => setChecked((x) => !x)}
           sx={{ m: 0, p: 0 }}
         />
-      </Box>
-      <Box
-        sx={{ width: "8rem", display: "flex", alignItems: "center" }}
-        scope="row"
-      >
+      </TableCell>
+      <TableCell sx={{ width: "32px" }} scope="row">
         {item.name}
-      </Box>
-      <Box sx={{ width: "4rem", display: "flex", alignItems: "center" }}>
+      </TableCell>
+      <TableCell sx={{ maxWidth: "32px", textAlign: "center" }}>
         {item.item_quantity}
-      </Box>
-      <Box sx={{ width: "10rem", display: "flex", alignItems: "center" }}>
-        {item.choices}
-      </Box>
-    </Box>
+      </TableCell>
+      <TableCell sx={{ width: "32px" }}>{item.choices}</TableCell>
+    </TableRow>
   );
 };
 
