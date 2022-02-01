@@ -6,21 +6,9 @@ import {Container, Typography, Box }from "@mui/material/";
 
 const Navbar = ({ username, token, eraseAuth }) => {
   return (
-      // <Container style={{ backgroundColor: "#FFF8F0" }}>
-      // <Typography 
-      //         sx={{
-      //         fontFamily: "Libre Franklin",
-      //         fontWeight: 90,
-      //         fontSize: "30px",
-
-      //       }}
-      //       component="div">
-      // <Box 
-      
-      // textAlign="right" m={1}
-      // >
       <Container
       component="div"
+      
     >
       <Box
         sx={{
@@ -62,10 +50,10 @@ const Navbar = ({ username, token, eraseAuth }) => {
             token={token}
             eraseAuth={eraseAuth}
             className="logout_button"
+            display="inline-block"
           />
           </Box>
           
-          {/* </Typography> */}
 
       </Container>
   );

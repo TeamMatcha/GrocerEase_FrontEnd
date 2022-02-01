@@ -7,8 +7,8 @@ import {
   CssBaseline,
   Container,
   Button,
-  Box,
-  Typography,
+  // Box,
+  // Typography,
   FormControl,
   TextField,
 } from "@mui/material/";
@@ -46,35 +46,9 @@ const CreateListForm = ({ token }) => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container style={{ backgroundColor: "#FFF8F0", marginLeft: "5px" }}>
-        <Box
-          sx={{
-            display: "flex",
-          }}
-        >
-          <Typography
-            sx={{
-              fontFamily: "Libre Franklin",
-              fontWeight: 900,
-              fontSize: "30px",
-            }}
-          >
-            Grocer
-          </Typography>
-          <Typography
-            sx={{
-              fontWeight: "100 !important",
-              fontSize: "30px",
-              fontStyle: "italic",
-            }}
-          >
-            Ease
-          </Typography>
-        </Box>
-      </Container>
-
+      
       <Container fixed style={{ backgroundColor: "#FFF8F0", marginLeft: "10px" }}>
-          <label style={{ textAlign: "left", alignItems: "justify-content" }}>
+          <label style={{ textAlign: "left", alignItems: "justify-content", }}>
             List Name
           </label>
 
@@ -86,16 +60,17 @@ const CreateListForm = ({ token }) => {
               value={name}
               onChange={(event) => handleChange("name", event)}
             />
-            <div>
+            {/* <div> */}
               <Button
                 style={{ color: "black" }}
                 size="medium"
                 onClick={handleSubmit}
+
               >
                 {" "}
                 Submit{" "}
               </Button>
-            </div>
+            {/* </div> */}
           </FormControl>
       </Container>
     </React.Fragment>

@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import CreateListForm from "./CreateListForm";
 import SavedGroceryList from "./SavedGroceryList";
-import { Typography, Container, Box } from "@mui/material";
+import { Container, Box } from "@mui/material";
 
 const Mainpage = ({ eraseAuth, token, username }) => {
   return (

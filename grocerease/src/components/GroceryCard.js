@@ -16,16 +16,17 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
 
   return (
     <div>
-    <Card  style={{ marginTop: "15px", marginBottom: "5px", marginLeft: "20px", marginRight: "45px",  width: "70", height: "95px" }}
+    <Card  style={{ marginTop: "15px", marginBottom: "5px", marginLeft: "20px", marginRight: "45px",  width: "70", height: "95px" ,  }}
 >
-
-      <CardMedia
+<div>
+      <CardMedia 
         image={pattern1}
-        height="20"
         component="img"
-        style={{ height: "40px" }}
+        style={{ height: "40px",}}
+
         
       />
+      </div>
       <CardContent style={{ backgroundColor: "#FFF8F0" }}>
         <Typography
           style={{ backgroundColor:"#FFF8F0", height: "50px" }}
@@ -46,7 +47,7 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
           ></i>
           {moment(date_created).format("MMMM Do YYYY")}
         </Typography>
-      </CardContent>
+      
 
       <CardActions style={{ backgroundColor: "#EEB61B" }}>
         <Button
@@ -58,6 +59,7 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
           }}
         >
           Details
+          {/* <i class="fas fa-search"></i> */}
         </Button>
         <Button
           style={{ color: "#FFF8F0" }}
@@ -68,8 +70,11 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
           }}
         >
           Delete
+          {/* <i class="fas fa-trash"></i> */}
         </Button>
       </CardActions>
+      </CardContent>
+
     </Card>
     </div>
   );
