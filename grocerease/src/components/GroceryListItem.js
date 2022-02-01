@@ -57,7 +57,7 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
           onChange={(event) => setItemCount(event.target.value)}
           onBlur={handleUpdateQuantity}
           sx={{
-            maxWidth: "32px",
+            minWidth: "32px",
             textAlign: "center",
             color: "#FFF8F0",
           }}

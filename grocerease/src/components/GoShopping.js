@@ -2,10 +2,19 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import CheckListItem from "./CheckListItem";
-import { Container, Button, Box, Typography } from "@mui/material";
+import { Container, Button, Box, Typography, TextField } from "@mui/material";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import Navbar from "./Navbar";
 import confetti from "canvas-confetti";
+import emptyList from "../images/emptyList.png";
 
-const GoShopping = ({ token }) => {
+const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
   const location = useLocation();
   let listId = location.search.split("=")[1];
   const [listName, setListName] = useState("");
@@ -85,68 +94,182 @@ const GoShopping = ({ token }) => {
         backgroundColor: "#FFF8F0",
         padding: "16px",
         minHeight: "95vh",
+        width: "100%",
       }}
       component="div"
     >
+      {isLoggedIn && (
+        <Navbar username={username} token={token} eraseAuth={eraseAuth} />
+      )}
       <Box
         sx={{
           maxHeight: "95vh",
           display: "flex",
           flexDirection: "column",
-          width: "316px",
+          maxWidth: "350px",
+          alignItems: "center",
         }}
       >
-        <Box>
-          <Typography
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              height: "10px",
-              fontWeight: "600",
-              fontSize: "24px",
-            }}
-          >
-            {listName}
-          </Typography>
-
-          <Box
-            sx={{
-              maxHeight: "95vh",
-              display: "flex",
-              maxWidth: "300px",
-            }}
-          >
-            <Typography sx={{}}>Product</Typography>
-            <Typography sx={{}}>Count</Typography>
-            <Typography sx={{}}>Category</Typography>
-          </Box>
-
-          <Box sx={{ overflowY: "auto", height: "100%" }}>
-            {items.map((item) => {
-              return <CheckListItem item={item} />;
-            })}
-          </Box>
-
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Box>
-            <Button
-              color="special"
-              variant="contained"
-              onClick={doneShopping}
+            <Box
               sx={{
-                height: "32px",
-                margin: "2px",
-                mx: "auto",
-                color: "black",
-                fontWeight: "100",
+                backgroundColor: "#FFF8F0",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                padding: "16px",
               }}
             >
-              Done Shopping
-            </Button>
+              <TextField
+                disabled
+                id="outlined-basic"
+                label="List Name"
+                variant="outlined"
+                color="primary"
+                value={listName}
+                onChange={(event) => setListName(event.target.value)}
+                component="div"
+                sx={{
+                  width: "320px",
+                  height: "32px",
+                }}
+              />
+            </Box>
           </Box>
+          <Box
+            sx={{
+              display: "flex",
+              width: "100%",
+            }}
+          >
+            <Box>
+              <Typography
+                sx={{
+                  minWidth: "64px",
+                }}
+              ></Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+              }}
+            >
+              <Typography
+                sx={{
+                  minWidth: "120px",
+                }}
+              >
+                Product
+              </Typography>
+            </Box>
+            <Box>
+              <Typography
+                sx={{
+                  minWidth: "32px",
+                }}
+              >
+                Count
+              </Typography>
+            </Box>
+            <Box>
+              <Typography
+                sx={{
+                  pl: 1.4,
+                  minWidth: "64px",
+                }}
+              >
+                Category
+              </Typography>
+            </Box>
+            <Box>
+              <Typography sx={{}}></Typography>
+            </Box>
+          </Box>
+        </Box>
+        <Box sx={{ overflowY: "scroll", height: "100%" }}>
+          {items.map((item) => {
+            return <CheckListItem item={item} />;
+          })}
         </Box>
       </Box>
     </Container>
+    // <Container
+    //   sx={{
+    //     display: "flex",
+    //     alignItems: "center",
+    //     flexDirection: "column",
+    //     backgroundColor: "#FFF8F0",
+    //     padding: "16px",
+    //     minHeight: "95vh",
+    //   }}
+    //   component="div"
+    // >
+    //   <Box
+    //     sx={{
+    //       maxHeight: "95vh",
+    //       display: "flex",
+    //       flexDirection: "column",
+    //       width: "316px",
+    //     }}
+    //   >
+    //     <Box>
+    //       <Typography
+    //         sx={{
+    //           display: "flex",
+    //           flexDirection: "column",
+    //           justifyContent: "center",
+    //           height: "10px",
+    //           fontWeight: "600",
+    //           fontSize: "24px",
+    //         }}
+    //       >
+    //         {listName}
+    //       </Typography>
+
+    //       <Box
+    //         sx={{
+    //           maxHeight: "95vh",
+    //           display: "flex",
+    //           maxWidth: "300px",
+    //         }}
+    //       >
+    //         <Typography sx={{}}>Product</Typography>
+    //         <Typography sx={{}}>Count</Typography>
+    //         <Typography sx={{}}>Category</Typography>
+    //       </Box>
+
+    //       <Box sx={{ overflowY: "auto", height: "100%" }}>
+    //         {items.map((item) => {
+    //           return <CheckListItem item={item} />;
+    //         })}
+    //       </Box>
+
+    //       <Box>
+    //         <Button
+    //           color="special"
+    //           variant="contained"
+    //           onClick={doneShopping}
+    //           sx={{
+    //             height: "32px",
+    //             margin: "2px",
+    //             mx: "auto",
+    //             color: "black",
+    //             fontWeight: "100",
+    //           }}
+    //         >
+    //           Done Shopping
+    //         </Button>
+    //       </Box>
+    //     </Box>
+    //   </Box>
+    // </Container>
   );
 };
 

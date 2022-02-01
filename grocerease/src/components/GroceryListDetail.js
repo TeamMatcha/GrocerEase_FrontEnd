@@ -4,18 +4,12 @@ import "../groceryListDetail.css";
 import GroceryListItem from "./GroceryListItem";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import { Typography } from "@mui/material";
-
+import Navbar from "./Navbar";
+import emptyList from "../images/emptyList.png";
 import { Container, TextField, MenuItem, Button, Box } from "@mui/material";
 
-const GroceryListDetail = ({ token }) => {
+const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
   const location = useLocation();
   let listId = location.search.split("=")[1];
   const [value, setValue] = useState("");
@@ -125,12 +119,15 @@ const GroceryListDetail = ({ token }) => {
       }}
       component="div"
     >
+      {isLoggedIn && (
+        <Navbar username={username} token={token} eraseAuth={eraseAuth} />
+      )}
       <Box
         sx={{
           maxHeight: "95vh",
           display: "flex",
           flexDirection: "column",
-          maxWidth: "300px",
+          maxWidth: "350px",
           mr: 1.1,
         }}
       >
@@ -255,54 +252,79 @@ const GroceryListDetail = ({ token }) => {
               </Box>
             </Box>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              pr: 5,
-            }}
-          >
+          {items.length === 0 ? null : (
             <Box
               sx={{
-                width: "75px",
                 display: "flex",
+                pr: 5,
               }}
             >
-              <Typography>Product</Typography>
-            </Box>
-            <Box>
-              <Typography
+              <Box
                 sx={{
-                  pr: 1,
+                  width: "75px",
+                  display: "flex",
                 }}
               >
-                Count
-              </Typography>
+                <Typography>Product</Typography>
+              </Box>
+              <Box>
+                <Typography
+                  sx={{
+                    pr: 1,
+                  }}
+                >
+                  Count
+                </Typography>
+              </Box>
+              <Box>
+                <Typography
+                  sx={{
+                    pl: 1.4,
+                  }}
+                >
+                  Category
+                </Typography>
+              </Box>
+              <Box>
+                <Typography sx={{}}></Typography>
+              </Box>
             </Box>
-            <Box>
-              <Typography
-                sx={{
-                  pl: 1.4,
-                }}
-              >
-                Category
-              </Typography>
-            </Box>
-            <Box>
-              <Typography sx={{}}></Typography>
-            </Box>
+          )}
+        </Box>
+        {items.length === 0 ? (
+          <Box
+            component="img"
+            sx={{
+              height: 233,
+              width: 350,
+              maxHeight: { xs: 233, md: 167 },
+              maxWidth: { xs: 350, md: 250 },
+            }}
+            alt="The house from the offer."
+            src="https://github.com/TeamMatcha/GrocerEase_FrontEnd/blob/main/grocerease/src/images/emptyList.png?raw=true"
+          />
+        ) : (
+          // <Box
+          //   sx={{
+          //     backgroundImage: `url(${emptyList})`,
+          //     width: "700px",
+          //     height: "700px",
+          //     backgroundSize: "cover",
+          //     backgroundPosition: "center",
+          //   }}
+          // ></Box>
+          <Box sx={{ overflowY: "scroll", height: "100%" }}>
+            {items.map((item) => {
+              return (
+                <GroceryListItem
+                  onGrabList={GrabList}
+                  item={item}
+                  token={token}
+                />
+              );
+            })}
           </Box>
-        </Box>
-        <Box sx={{ overflowY: "scroll", height: "100%" }}>
-          {items.map((item) => {
-            return (
-              <GroceryListItem
-                onGrabList={GrabList}
-                item={item}
-                token={token}
-              />
-            );
-          })}
-        </Box>
+        )}
         <Box
           sx={{
             display: "flex",
