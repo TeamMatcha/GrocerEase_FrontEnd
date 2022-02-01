@@ -93,7 +93,7 @@ const GoShopping = ({ token }) => {
           maxHeight: "95vh",
           display: "flex",
           flexDirection: "column",
-          maxWidth: "316px",
+          width: "316px",
         }}
       >
         <Box>
@@ -114,7 +114,6 @@ const GoShopping = ({ token }) => {
             sx={{
               maxHeight: "95vh",
               display: "flex",
-              flexDirection: "column",
               maxWidth: "300px",
             }}
           >

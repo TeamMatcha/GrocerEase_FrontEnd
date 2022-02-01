@@ -26,26 +26,26 @@ const CheckListItem = ({ item }) => {
           height: "2px",
           position: "absolute",
           background: checked ? "white" : "transparent",
-          width: "24rem",
-          ml: "1rem",
-          mt: "1.3rem",
+          width: "287px",
+          ml: "16px",
+          mt: "36px",
         },
       }}
     >
-      <TableCell sx={{ display: "flex", alignItems: "center" }}>
+      <TableCell sx={{ width: "32px", display: "flex", alignItems: "center" }}>
         <Checkbox
           checked={checked}
           onChange={() => setChecked((x) => !x)}
           sx={{ m: 0, p: 0 }}
         />
       </TableCell>
-      <TableCell sx={{ width: "32px" }} scope="row">
+      <TableCell sx={{ width: "80px" }} scope="row">
         {item.name}
       </TableCell>
-      <TableCell sx={{ maxWidth: "32px", textAlign: "center" }}>
+      <TableCell sx={{ width: "64px", textAlign: "center" }}>
         {item.item_quantity}
       </TableCell>
-      <TableCell sx={{ width: "32px" }}>{item.choices}</TableCell>
+      <TableCell sx={{ width: "140px" }}>{item.choices}</TableCell>
     </TableRow>
   );
 };
