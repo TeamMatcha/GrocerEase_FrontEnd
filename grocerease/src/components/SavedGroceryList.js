@@ -60,7 +60,7 @@ const SavedGroceryList = ({ token }) => {
     <React.Fragment>
       <CssBaseline />
 
-      <Container style={{ backgroundColor: "#FFF8F0" }}>
+      <Container style={{ backgroundColor: "FF8811" }}>
         <div>
           <div className="search-filter" size="medium" padding="50px">
             <div>
