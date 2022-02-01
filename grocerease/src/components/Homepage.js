@@ -71,7 +71,7 @@ const Homepage = () => {
       sx={{
          margin: "10px",
          backgroundColor: "#FFF8F0",
-         color: "#186bcc", 
+         color: "black", 
         
       }}
       >
@@ -83,7 +83,7 @@ const Homepage = () => {
        margin: "10px",
        textAlign: "center", 
        backgroundColor: "#FFF8F0",
-       color: "#186bcc",
+       color: "black",
      }}
      >
       Register

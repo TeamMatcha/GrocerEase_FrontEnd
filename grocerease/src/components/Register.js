@@ -159,7 +159,7 @@ export const Register = ({ setAuth, isLoggedIn }) => {
           />
           </FormControl>
         <FormControl fullWidth>
-          <Button variant="outlined" type="submit">
+          <Button variant="outlined" type="submit" style={{ color:"black", borderColor:"black",}}>
             Register
           </Button>
         </FormControl>

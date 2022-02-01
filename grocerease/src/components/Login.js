@@ -126,7 +126,7 @@ export default function Login({ isLoggedIn, setAuth }) {
           />
         </FormControl>
         <FormControl fullWidth>
-          <Button variant="outlined" type="submit">
+          <Button variant="outlined" type="submit" style={{ color:"black", borderColor:"black",}}>
             Login
           </Button>
         </FormControl>
