@@ -88,7 +88,7 @@ export default function Login({ isLoggedIn, setAuth }) {
             margin: 0,
           }}
         >
-          shop quick, easy, and in a breeze!
+          Shopping can be a breeze!
         </Typography>
       </Box>
 
