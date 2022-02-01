@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "../homepage.css";
 import iphoto from "../images/produceBar.png";
 import {
@@ -7,7 +6,7 @@ import {
   Box,
   Button,
   }  from "@mui/material";
-import { alignProperty } from "@mui/material/styles/cssUtils";
+
 
 
 const Homepage = () => {
@@ -67,22 +66,6 @@ const Homepage = () => {
           shop quick, easy, and in a breeze!
         </Typography>
       </Box>
-
-
-
-       {/* <Typography variant="h6" color="#ffffff" gutterBottom component="div"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          margin: "15px",
-          height: "100vh",
-          padding: "25px",
-          marginBottom: "75px",
-        
-      }}
-      >
-      Quick, Fast & A Breeze, Shop With GrocerEase
-      </Typography>       */}
 
       <Button variant="contained" href="/login"
       sx={{
