@@ -91,13 +91,12 @@ export default function Login({ isLoggedIn, setAuth }) {
           Shopping can be a breeze!
         </Typography>
       </Box>
-
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           margin: "15px",
-          backgroundColor: "white",
+          backgroundColor: "#FFFFFF",
           padding: "25px",
           marginBottom: "75px",
           color: "#FFF8F0",
@@ -108,7 +107,6 @@ export default function Login({ isLoggedIn, setAuth }) {
         <FormControl fullWidth style={{ marginBottom: "20px" }} className="mt3">
           <TextField
             placeholder="Username"
-            label="Username"
             variant="filled"
             color="primary"
             type="text"
@@ -119,16 +117,15 @@ export default function Login({ isLoggedIn, setAuth }) {
         <FormControl style={{ marginBottom: "25px" }} fullWidth>
           <TextField
             placeholder="Password"
-            label="Password"
             variant="filled"
             color="primary"
-            type="text"
+            type="password"
             id="email"
             onChange={(event) => setPassword(event.target.value)}
           />
         </FormControl>
         <FormControl fullWidth>
-          <Button variant="outlined" type="submit" style={{color:"black", borderColor:"black",}}>
+          <Button variant="outlined" type="submit" style={{ color:"black", borderColor:"black",}}>
             Login
           </Button>
         </FormControl>
