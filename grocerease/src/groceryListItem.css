@@ -1,3 +1,9 @@
 .cardContent {
     display: flex;
+    width: 300px,
+}
+
+.item_count {
+    height: 36px;
+    width: 36px;
 }

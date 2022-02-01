@@ -16,30 +16,29 @@ export const Register = ({ setAuth, isLoggedIn }) => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   if (isLoggedIn) {
     navigate("/lists");
-  }  
-
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
       .post("https://grocerease.herokuapp.com/auth/users/", {
         username: username,
         password: password,
-        email: email
+        email: email,
       })
       .then((res) => {
-        console.log(res);
         return axios
           .post("https://grocerease.herokuapp.com/auth/token/login/", {
             username: username,
             password: password,
           })
           .then((data) => {
+            console.log(data);
             if (data && data.data.auth_token) {
               setAuth(username, data.data.auth_token);
-            } 
+            }
           });
       });
   };
@@ -57,8 +56,7 @@ export const Register = ({ setAuth, isLoggedIn }) => {
   };
 
   return (
-
-<Container
+    <Container
       sx={{
         display: "flex",
         justifyContent: "flex-end",
@@ -147,7 +145,7 @@ export const Register = ({ setAuth, isLoggedIn }) => {
             onChange={(e) => handleChange("password", e)}
           />
         </FormControl>
-        
+
         <FormControl fullWidth style={{ marginBottom: "20px" }} className="mt3">
           <TextField
             placeholder="Email"
@@ -157,14 +155,17 @@ export const Register = ({ setAuth, isLoggedIn }) => {
             id="email"
             onChange={(e) => handleChange("email", e)}
           />
-          </FormControl>
+        </FormControl>
         <FormControl fullWidth>
-          <Button variant="outlined" type="submit" style={{ color:"black", borderColor:"black",}}>
+          <Button
+            variant="outlined"
+            type="submit"
+            style={{ color: "black", borderColor: "black" }}
+          >
             Register
           </Button>
         </FormControl>
       </Box>
     </Container>
   );
-}
-
+};

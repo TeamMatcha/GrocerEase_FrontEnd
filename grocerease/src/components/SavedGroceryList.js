@@ -7,7 +7,6 @@ import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 
-
 const SavedGroceryList = ({ token }) => {
   const [lists, setLists] = useState([]);
   useEffect(() => {
@@ -32,10 +31,10 @@ const SavedGroceryList = ({ token }) => {
   }, [token, setLists]);
 
   const SortList = (event) => {
-    console.log(event.target.value);
     const sorted_lists = _.orderBy(
       lists,
       [event.target.value],
+      // if the event.target.value = the date_created set descinding order
       [event.target.value === "date_created" && "desc"]
     );
     console.log({ sorted_lists });
@@ -74,7 +73,6 @@ const SavedGroceryList = ({ token }) => {
           </div>
           {lists &&
             lists.map((list) => {
-              console.log(list);
               return (
                 <GroceryCard
                   name={list.name}

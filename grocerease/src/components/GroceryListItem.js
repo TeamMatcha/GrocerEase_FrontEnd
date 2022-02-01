@@ -1,10 +1,11 @@
 import { useState } from "react";
+import * as React from "react";
 import axios from "axios";
-import IconButton from '@mui/material/IconButton'
-import DeleteIcon from '@mui/icons-material/Delete';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import '../groceryListItem.css';
+import { Input } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
 
 const GroceryListItem = ({ item, token, onGrabList }) => {
   console.log(item);
@@ -22,7 +23,6 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
         }
       )
       .then(() => {
-        console.log("here");
         onGrabList();
       });
   };
@@ -41,29 +41,41 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
   };
 
   return (
-    <Card className="grocery_list">
-        <IconButton 
-        aria-label="delete"
-            onClick={(event) => {
-              event.preventDefault();
-              deleteItem(item);
-            }}>
-            <DeleteIcon />
-          </IconButton>
-          <CardContent className='cardContent'>
-          <h2 className="item_name">{item.name}</h2>
-            <input
-              className="item_count"
-              type="number"
-              value={itemCount}
-              onChange={(event) => setItemCount(event.target.value)}
-              onBlur={handleUpdateQuantity}
-            >
-            </input>
-            <p className="count">ct.</p>
-          <p>{item.choices}</p>
-          </CardContent>
-    </Card>
+    <TableRow
+      key={item.name}
+      sx={{
+        background: "#EEB61B",
+        color: "#FFF8F0",
+      }}
+    >
+      <TableCell sx={{ width: "32px" }} scope="row">
+        {item.name}
+      </TableCell>
+      <TableCell scope="row">
+        <Input
+          value={itemCount}
+          onChange={(event) => setItemCount(event.target.value)}
+          onBlur={handleUpdateQuantity}
+          sx={{
+            maxWidth: "32px",
+            textAlign: "center",
+            color: "#FFF8F0",
+          }}
+        />
+      </TableCell>
+      <TableCell sx={{ width: "16px" }}>{item.choices}</TableCell>
+
+      <TableCell sx={{ width: "32px" }} scope="row" align="right">
+        <IconButton
+          onClick={(event) => {
+            event.preventDefault();
+            deleteItem(item);
+          }}
+        >
+          <DeleteIcon sx={{ color: "#FFF8F0", fontSize: "20px", p: 0, m: 0 }} />
+        </IconButton>
+      </TableCell>
+    </TableRow>
   );
 };
 
