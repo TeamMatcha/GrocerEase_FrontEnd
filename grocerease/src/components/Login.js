@@ -42,7 +42,7 @@ export default function Login({ isLoggedIn, setAuth }) {
         justifyContent: "flex-end",
         flexDirection: "column",
         height: "100vh",
-        backgroundColor: "#EEB61B",
+        backgroundColor: "white",
         backgroundImage: `url(${hero})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -97,7 +97,7 @@ export default function Login({ isLoggedIn, setAuth }) {
           display: "flex",
           flexDirection: "column",
           margin: "15px",
-          backgroundColor: "#FF8811",
+          backgroundColor: "white",
           padding: "25px",
           marginBottom: "75px",
           color: "#FFF8F0",
@@ -128,7 +128,7 @@ export default function Login({ isLoggedIn, setAuth }) {
           />
         </FormControl>
         <FormControl fullWidth>
-          <Button variant="outlined" type="submit">
+          <Button variant="outlined" type="submit" style={{color:"black", borderColor:"black",}}>
             Login
           </Button>
         </FormControl>

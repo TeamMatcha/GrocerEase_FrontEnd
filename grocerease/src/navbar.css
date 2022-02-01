@@ -19,3 +19,8 @@
     color:#462521;
     border-color: #462521;
 }
+
+.logout-container {
+    display: flex;
+    justify-content: flex-end;
+}

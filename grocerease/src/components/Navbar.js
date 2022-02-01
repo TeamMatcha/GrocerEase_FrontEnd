@@ -13,7 +13,6 @@ const Navbar = ({ username, token, eraseAuth }) => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "left",
           color: "black",
           flexDirection: "column",
           backgroundColor: "#FFF8F0"
@@ -25,6 +24,7 @@ const Navbar = ({ username, token, eraseAuth }) => {
           }}
         >
           <Typography
+          
             sx={{
               fontFamily: "Libre Franklin",
               fontWeight: 900,
@@ -42,16 +42,23 @@ const Navbar = ({ username, token, eraseAuth }) => {
           >
             Ease
           </Typography>
-        </Box>
-
-
+          <div className="logout-container">
           <Logout
+          sx={{
+            display:"flex",
+            justifyContent: "flex-end",
+            marginRight: "50px"
+          }}
             username={username}
             token={token}
             eraseAuth={eraseAuth}
             className="logout_button"
-            display="inline-block"
+            // display="inline-block"
           />
+          </div>
+        </Box>
+
+
           </Box>
           
 

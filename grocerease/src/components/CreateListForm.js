@@ -60,17 +60,21 @@ const CreateListForm = ({ token }) => {
               value={name}
               onChange={(event) => handleChange("name", event)}
             />
-            {/* <div> */}
-              <Button
-                style={{ color: "black" }}
-                size="medium"
+            <Button
+            sx={{
+            display:"flex",
+            justifyContent: "flex-end",
+            marginRight: "50px",
+            color: "black",
+
+          }}
+
                 onClick={handleSubmit}
 
               >
                 {" "}
                 Submit{" "}
               </Button>
-            {/* </div> */}
           </FormControl>
       </Container>
     </React.Fragment>
