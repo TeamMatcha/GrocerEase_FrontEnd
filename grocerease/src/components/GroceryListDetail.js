@@ -130,7 +130,7 @@ const GroceryListDetail = ({ token }) => {
           maxHeight: "95vh",
           display: "flex",
           flexDirection: "column",
-          maxWidth: "316px",
+          maxWidth: "275px",
         }}
       >
         <Box

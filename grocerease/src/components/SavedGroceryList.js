@@ -73,7 +73,6 @@ const SavedGroceryList = ({ token }) => {
           </div>
           {lists &&
             lists.map((list) => {
-              console.log(list);
               return (
                 <GroceryCard
                   name={list.name}
