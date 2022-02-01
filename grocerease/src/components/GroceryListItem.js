@@ -5,14 +5,6 @@ import { Input, TextField } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Typography, Box, Card } from "@mui/material";
-import pattern from "../pattern_hexagon.png";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import { DataGrid } from "@mui/x-data-grid";
 
 const GroceryListItem = ({ item, token, onGrabList }) => {
   console.log(item);
@@ -49,90 +41,79 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
   };
 
   return (
-    <TableContainer>
-      <Table sx={{ minWidth: "225px" }} aria-label="simple table">
-        <TableBody>
-          <TableRow
-            key={item.name}
-            sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-          >
-            <TableCell component="th" scope="row">
-              {item.name}
-            </TableCell>
-            <TableCell
-              sc={{
-                width: "10px",
-              }}
-            >
-              {itemCount}
-            </TableCell>
-            <TableCell
-              component="th"
-              scope="row"
-              onChange={(event) => setItemCount(event.target.value)}
-              onBlur={handleUpdateQuantity}
-            >
-              {item.choices}
-            </TableCell>
-            <TableCell component="th" scope="row" align="right">
-              <IconButton
-                aria-label="delete"
-                onClick={(event) => {
-                  event.preventDefault();
-                  deleteItem(item);
-                }}
-              >
-                <DeleteIcon />
-              </IconButton>
-            </TableCell>
-          </TableRow>
-        </TableBody>
-        {/* <IconButton
-          aria-label="delete"
+    <Box
+      key={item.name}
+      sx={{
+        display: "flex",
+        color: "#FFF8F0",
+        padding: 0,
+        marginLeft: 1.3,
+        "& > *": { border: "1px solid black", px: 2, background: "#EEB61B" },
+        "& *": { ml: 0, py: "3px", color: "#FFF8F0" },
+      }}
+    >
+      <Box sx={{ width: "8rem" }} scope="row">
+        {item.name}
+      </Box>
+      <Box sx={{ width: "4rem" }}>
+        <Input
+          value={itemCount}
+          onChange={(event) => setItemCount(event.target.value)}
+          onBlur={handleUpdateQuantity}
+          sx={{ width: "2rem", textAlign: "center", color: "#FFF8F0" }}
+        />
+      </Box>
+      <Box sx={{ width: "8rem" }}>{item.choices}</Box>
+      <Box sx={{ width: "3.5rem" }} scope="row" align="right">
+        <IconButton
           onClick={(event) => {
             event.preventDefault();
             deleteItem(item);
           }}
         >
-          <DeleteIcon />
+          <DeleteIcon sx={{ fontSize: "20px", p: 0, m: 0 }} />
         </IconButton>
+      </Box>
+    </Box>
+    // <TableRow
+    //   key={item.name}
+    //   sx={{
+    //     background: "#EEB61B",
+    //     color: "#FFF8F0",
+    //     //height: "15px",
+    //     padding: 0,
+    //     "& td": { border: "1px solid black", height: "1px !important" },
+    //     "& * *": { m: 0, py: "3px", color: "#FFF8F0" },
+    //   }}
+    // >
+    //   <TableCell sx={{ width: "14rem" }} scope="row">
+    //     {item.name}
+    //   </TableCell>
+    //   <TableCell scope="row">
+    //     <Input
+    //       value={itemCount}
+    //       onChange={(event) => setItemCount(event.target.value)}
+    //       onBlur={handleUpdateQuantity}
+    //       sx={{ maxWidth: "2rem", textAlign: "center" }}
+    //     />
+    //   </TableCell>
+    //   <TableCell sx={{ width: "10rem" }}>{item.choices}</TableCell>
 
-        <Typography
-          sx={{
-            fontSize: "24px",
-          }}
-        >
-          {item.name}
-        </Typography>
-
-        <input
-          className="item_count"
-          type="number"
-          value={itemCount}
-          onChange={(event) => setItemCount(event.target.value)}
-          onBlur={handleUpdateQuantity}
-        ></input>
-
-        <Typography
-          sx={{
-            margin: "8px",
-            fontSize: "24px",
-          }}
-        >
-          ct.
-        </Typography>
-
-        <Typography
-          sx={{
-            display: "flex",
-            alignItems: "flex-end",
-            fontSize: "20px",
-          }}
-        >
-          {item.choices}
-        </Typography> */}
-      </Table>
-    </TableContainer>
+    //   <TableCell
+    //     sx={{ width: "4rem", maxHeight: " 2rem" }}
+    //     scope="row"
+    //     align="right"
+    //   >
+    //     <IconButton
+    //       onClick={(event) => {
+    //         event.preventDefault();
+    //         deleteItem(item);
+    //       }}
+    //     >
+    //       <DeleteIcon sx={{ fontSize: "20px", p: 0, m: 0 }} />
+    //     </IconButton>
+    //   </TableCell>
+    // </TableRow>
   );
 };
 

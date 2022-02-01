@@ -100,11 +100,24 @@ const GoShopping = ({ token }) => {
       >
         {listName}
       </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          mt: 3,
+          pl: "8rem",
+        }}
+      >
+        <Typography sx={{ width: "8.5rem", pl: 1 }}>Product</Typography>
+        <Typography sx={{ width: "4rem" }}>Count</Typography>
+        <Typography sx={{ width: "11rem" }}>Category</Typography>
+      </Box>
 
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
+          mb: 3,
+          mx: "auto",
         }}
       >
         {items.map((item) => {
@@ -119,6 +132,7 @@ const GoShopping = ({ token }) => {
           sx={{
             height: "32px",
             margin: "2px",
+            mx: "auto",
             color: "black",
             fontWeight: "100",
           }}
