@@ -16,7 +16,7 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
 
   return (
     <div>
-    <Card  style={{ marginTop: "15px", marginBottom: "5px", marginLeft: "20px", marginRight: "45px",  width: "70", height: "95px" ,  }}
+    <Card  style={{ marginTop: "15px", marginBottom: "5px", marginLeft: "50px", marginRight: "45px",  width: "70", height: "95px" ,  }}
 >
 <div>
       <CardMedia 

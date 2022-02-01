@@ -25,6 +25,10 @@ const Logout = ({ username, token, eraseAuth }) => {
 
   return (
     <Container  style={{ backgroundColor: "#FFF8F0" , padding: "15px", fullWidth: "auto" , color: "black" }}
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+      }}
     onClick={onClick}>
     <Typography
     >

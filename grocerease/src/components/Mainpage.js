@@ -6,7 +6,6 @@ import { Container, Box } from "@mui/material";
 const Mainpage = ({ eraseAuth, token, username }) => {
   return (
     <>
-    this is the top header of the app
       <Container style={{ backgroundColor: "#EEB61B" }}>
       <Box
               sx={{
