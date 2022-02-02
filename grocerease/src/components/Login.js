@@ -103,7 +103,8 @@ export default function Login({ isLoggedIn, setAuth }) {
           padding: "25px",
           marginBottom: "75px",
           color: "#FFF8F0",
-          borderRadius: "10%"
+          borderRadius: "10%",
+          boxShadow: "10",
         }}
         component="form"
         onSubmit={handleSubmit}
