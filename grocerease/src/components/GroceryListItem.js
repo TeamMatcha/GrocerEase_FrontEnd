@@ -44,35 +44,49 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
     <TableRow
       key={item.name}
       sx={{
-        background: "#EEB61B",
-        color: "#FFF8F0",
+        background: "#FFF8F0",
+        color: "black",
       }}
     >
-      <TableCell sx={{ width: "32px" }} scope="row">
+      <TableCell
+        sx={{ width: "32px", borderBottom: "1px solid #EEB61B" }}
+        scope="row"
+      >
         {item.name}
       </TableCell>
-      <TableCell scope="row">
+      <TableCell
+        sx={{
+          borderBottom: "1px solid #EEB61B",
+        }}
+        scope="row"
+      >
         <Input
           value={itemCount}
           onChange={(event) => setItemCount(event.target.value)}
           onBlur={handleUpdateQuantity}
           sx={{
-            maxWidth: "32px",
+            minWidth: "32px",
             textAlign: "center",
-            color: "#FFF8F0",
+            color: "black",
           }}
         />
       </TableCell>
-      <TableCell sx={{ width: "16px" }}>{item.choices}</TableCell>
+      <TableCell sx={{ width: "16px", borderBottom: "1px solid #EEB61B" }}>
+        {item.choices}
+      </TableCell>
 
-      <TableCell sx={{ width: "32px" }} scope="row" align="right">
+      <TableCell
+        sx={{ width: "32px", borderBottom: "1px solid #EEB61B" }}
+        scope="row"
+        align="right"
+      >
         <IconButton
           onClick={(event) => {
             event.preventDefault();
             deleteItem(item);
           }}
         >
-          <DeleteIcon sx={{ color: "#FFF8F0", fontSize: "20px", p: 0, m: 0 }} />
+          <DeleteIcon sx={{ color: "black", fontSize: "20px", p: 0, m: 0 }} />
         </IconButton>
       </TableCell>
     </TableRow>
