@@ -8,6 +8,7 @@ import {
   Button,
   CardContent,
   Typography,
+  Box
 } from "@mui/material";
 import pattern1 from "../images/pattern1.png";
 
@@ -23,7 +24,7 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
           marginLeft: "50px",
           marginRight: "45px",
           width: "70",
-          height: "95px",
+          // height: "95px",
         }}
       >
         <div>
@@ -33,30 +34,40 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
             style={{ height: "40px" }}
           />
         </div>
-        <CardContent style={{ backgroundColor: "#FFF8F0" }}>
+        <CardContent style={{ backgroundColor: "#EEB61B" }}>
           <Typography
-            style={{ backgroundColor: "#FFF8F0", height: "50px" }}
             gutterBottom
             variant="h5"
             component="div"
-            color="#EEB61B"
+            color="#FFF8F0"
           >
             {name}
           </Typography>
-
-          <Typography variant="body1" color="#FFF8F0">
-            <i
+          <Box
+          sx={{
+            display: "flex",
+            color: "#FFF8F0",
+          }}>
+          <i
               style={{ marginRight: "5px" }}
               class="fa fa-calendar"
               aria-hidden="true"
             ></i>
+          <Typography variant="body1" >
             {moment(date_created).format("MMMM Do YYYY")}
           </Typography>
-
-          <CardActions style={{ backgroundColor: "#EEB61B" }}>
+          </Box>
+          <CardActions>
             <Button
-              style={{ color: "#FFF8F0" }}
-              size="small"
+              color="invertSpecial"
+              sx={{
+                fontSize: "10px",
+                height: "29px",
+                fontWeight: "200",
+                color: "#EEB61B",
+                marginTop: "15px",
+              }}
+              variant="contained"
               onClick={() => {
                 navigate(`/create_list_detail?id=${listId}`);
               }}
@@ -65,8 +76,15 @@ export const GroceryCard = ({ name, date_created, tags, listId, onDelete }) => {
               {/* <i class="fas fa-search"></i> */}
             </Button>
             <Button
-              style={{ color: "#FFF8F0" }}
-              size="small"
+              color="invertSpecial"
+              sx={{
+                fontSize: "10px",
+                height: "29px",
+                fontWeight: "200",
+                color: "#EEB61B",
+                marginTop: "15px",
+              }}
+              variant="contained"
               onClick={(event) => {
                 event.preventDefault();
                 onDelete(listId);

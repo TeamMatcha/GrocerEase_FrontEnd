@@ -55,11 +55,15 @@ export default function Login({ isLoggedIn, setAuth }) {
           justifyContent: "center",
           color: "#FFF8F0",
           flexDirection: "column",
+          borderRadius: "25%",
+
         }}
       >
         <Box
           sx={{
             display: "flex",
+            marginTop: "40px",
+
           }}
         >
           <Typography
@@ -86,6 +90,9 @@ export default function Login({ isLoggedIn, setAuth }) {
             fontSize: "20px",
             fontStyle: "italic",
             margin: 0,
+            alignItems: "center", 
+            marginLeft: "50px",
+            marginBottom: "0px",
           }}
         >
           Shopping can be a breeze!
@@ -93,18 +100,20 @@ export default function Login({ isLoggedIn, setAuth }) {
       </Box>
       <Box
         sx={{
-          display: "flex",
+          display: "flex-end",
           flexDirection: "column",
-          margin: "15px",
+          margin: "50px",
           backgroundColor: "#FFFFFF",
           padding: "25px",
-          marginBottom: "75px",
+          marginTop: "65px",
           color: "#FFF8F0",
+          borderRadius: "10%",
+          boxShadow: "10",
         }}
         component="form"
         onSubmit={handleSubmit}
       >
-        <FormControl fullWidth style={{ marginBottom: "20px" }} className="mt3">
+        <FormControl fullWidth style={{ marginBottom: "20px", fontWeight: "400px" }} className="mt3">
           <TextField
             placeholder="Username"
             variant="filled"
@@ -114,7 +123,7 @@ export default function Login({ isLoggedIn, setAuth }) {
             onChange={(event) => setUsername(event.target.value)}
           />
         </FormControl>
-        <FormControl style={{ marginBottom: "25px" }} fullWidth>
+        <FormControl fullWidth style={{ marginBottom: "25px", fontWeight: "800px"}} >
           <TextField
             placeholder="Password"
             variant="filled"
@@ -125,11 +134,7 @@ export default function Login({ isLoggedIn, setAuth }) {
           />
         </FormControl>
         <FormControl fullWidth>
-          <Button
-            variant="outlined"
-            type="submit"
-            style={{ color: "black", borderColor: "black" }}
-          >
+          <Button variant="outlined" type="submit" style={{ color:"#FF8811", borderColor:"#FF8811",}}>
             Login
           </Button>
         </FormControl>

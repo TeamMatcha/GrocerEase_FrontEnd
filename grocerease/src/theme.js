@@ -13,6 +13,9 @@ const theme = createTheme({
     special: {
       main: "#EEB61B",
     },
+    invertSpecial: {
+      main: "#FFF8F0",
+    },
     notchedOutline: {
       borderWidth: "1px",
       borderColor: "#000 !important",

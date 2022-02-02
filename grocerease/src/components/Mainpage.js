@@ -6,29 +6,27 @@ import { Container, Box } from "@mui/material";
 const Mainpage = ({ eraseAuth, token, username }) => {
   return (
     <>
-      <Container style={{ backgroundColor: "#EEB61B" }}>
-      <Box
-              sx={{
-          display: "flex",
-          padding: "15px",
-          
-        }}
-        >
-      </Box>
-      </Container>
 
       
       <div>
       
         <Navbar eraseAuth={eraseAuth} token={token} username={username} />
       </div>
-
-      <div>
+      <Container
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        backgroundColor: "#FFF8F0",
+        padding: "16px",
+        marginTop: "0px",
+        height: "95vh"
+      }}
+      component="div"
+    >
         <CreateListForm token={token} />
-      </div>
-      <div>
         <SavedGroceryList token={token} />
-      </div>
+      </Container>
     </>
   );
 };
