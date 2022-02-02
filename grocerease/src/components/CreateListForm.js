@@ -52,16 +52,15 @@ const CreateListForm = ({ token }) => {
             sx={{
               "& .MuiSelect-select": { padding: "3px 10px" },
               marginTop: "15px",
-              "& label": { background: "#FFF8F0", px: 1, py: 0 },
+              "& label": { background: "#FFF8F0", pb: 2 },
               width: "297px",
               height: "32px",
               marginRight: "10px",
             }}
-            select
-            label="Sort By"
+            // select
+            // label="Sort By"
             labelWidth={250}
-            variant="outlined"
-            value="Date"
+            // value="name"
             id="outlined-basic"
             label="List Name"
             variant="outlined"
