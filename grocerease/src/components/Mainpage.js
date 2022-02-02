@@ -12,6 +12,7 @@ const Mainpage = ({ eraseAuth, token, username }) => {
           display: "flex",
           padding: "15px",
           
+          
         }}
         >
       </Box>

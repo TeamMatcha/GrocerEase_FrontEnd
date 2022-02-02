@@ -55,6 +55,8 @@ export default function Login({ isLoggedIn, setAuth }) {
           justifyContent: "center",
           color: "#FFF8F0",
           flexDirection: "column",
+          borderRadius: "25%",
+
         }}
       >
         <Box
@@ -86,6 +88,7 @@ export default function Login({ isLoggedIn, setAuth }) {
             fontSize: "20px",
             fontStyle: "italic",
             margin: 0,
+            alignItems: "center", 
           }}
         >
           Shopping can be a breeze!
@@ -100,6 +103,7 @@ export default function Login({ isLoggedIn, setAuth }) {
           padding: "25px",
           marginBottom: "75px",
           color: "#FFF8F0",
+          borderRadius: "10%"
         }}
         component="form"
         onSubmit={handleSubmit}
