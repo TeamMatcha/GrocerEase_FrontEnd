@@ -292,6 +292,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
           )}
         </Box>
         {items.length === 0 ? (
+          <Box style={{ textAlign: 'center' }}>
           <Box
             component="img"
             sx={{
@@ -303,6 +304,10 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
             alt="The house from the offer."
             src="https://github.com/TeamMatcha/GrocerEase_FrontEnd/blob/main/grocerease/src/images/emptyList.png?raw=true"
           />
+            <Typography>
+              Whoops, looks like this list has no items!
+            </Typography>
+          </Box>
         ) : (
           <Box sx={{ overflowY: "scroll", height: "100%" }}>
             {items.map((item) => {

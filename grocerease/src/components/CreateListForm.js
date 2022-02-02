@@ -29,65 +29,53 @@ const CreateListForm = ({ token }) => {
       });
   };
 
-  const handleChange = (inputType, event) => {
-    if (inputType === "name") {
-      setName(event.target.value);
-    }
+  const handleChange = (event) => {
+    setName(event.target.value);
   };
 
   return (
-<React.Fragment>
-<Box
+    <React.Fragment>
+      <Box
         sx={{
           display: "flex",
-          alignItems: "center",
+          // height: '45px'
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-          }}
-        >
-          <TextField
-            sx={{
-              "& .MuiSelect-select": { padding: "3px 10px" },
-              marginTop: "15px",
-              "& label": { background: "#FFF8F0", px: 1, py: 0 },
-              width: "297px",
-              height: "32px",
-              marginRight: "10px",
-            }}
-            select
-            label="Sort By"
-            labelWidth={250}
-            variant="outlined"
-            value="Date"
-            id="outlined-basic"
-            label="List Name"
-            variant="outlined"
-            color="primary"
-            type="text"
-            placeholder="List's Name"
-            onChange={(event) => handleChange("name", event)}
-            component="div"
-          />
 
-          <Button
-            color="special"
-            sx={{
-              fontSize: "10px",
-              height: "29px",
-              fontWeight: "100",
-              color: "#FFF8F0",
-              marginTop: "15px"
-            }}
-            variant="contained"
-            onClick={handleSubmit}
-            type="submit"
-          >
-            Create
-          </Button>
-        </Box>
+        <TextField
+          labelWidth={150}
+          id="outlined-basic"
+          label="List Name"
+          variant="outlined"
+          color="primary"
+          value={name}
+          placeholder="List's Name"
+          onChange={(event) => handleChange(event)}
+          sx={{
+            marginTop: "15px",
+            "& label": { background: "#FFF8F0", px: 1, py: -4 },
+            width: "285px",
+            marginRight: '15px'
+          }}
+          InputLabelProps={{
+            shrink: 'shrink',
+          }}
+        />
+        <Button
+          color="special"
+          sx={{
+            fontSize: "10px",
+            fontWeight: "100",
+            color: "#FFF8F0",
+            marginTop: "15px",
+            // height: '30px'
+          }}
+          variant="contained"
+          onClick={handleSubmit}
+          type="submit"
+        >
+          Create
+        </Button>
       </Box>
     </React.Fragment>
   );

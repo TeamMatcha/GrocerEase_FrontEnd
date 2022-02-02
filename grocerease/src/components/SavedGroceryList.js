@@ -4,11 +4,10 @@ import { GroceryCard } from "./GroceryCard";
 import _ from "lodash";
 import "../groceryCard.css";
 import * as React from "react";
-import { Container, Box, TextField, MenuItem, Select } from "@mui/material";
-
+import { Container, Box, TextField, MenuItem, Typography } from "@mui/material";
+import image from '../images/empty-state-grocery-list.png';
 const SavedGroceryList = ({ token }) => {
   const [lists, setLists] = useState([]);
-  const [choices, setChoices] = useState("date_created")
   useEffect(() => {
     axios
       .get("https://grocerease.herokuapp.com/grocerease/lists/", {
@@ -64,7 +63,6 @@ const SavedGroceryList = ({ token }) => {
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
-          // height: "95vh"
         }}
       >
           <TextField
@@ -85,7 +83,20 @@ const SavedGroceryList = ({ token }) => {
             <MenuItem value="date_created">Date</MenuItem>
             <MenuItem value="name">List Name</MenuItem>
           </TextField>
-          {lists &&
+        {lists && lists.length <= 0 ?
+          <Box style={{ textAlign: 'center' }}>
+            <Box
+              component="img"
+              sx={{
+                height: 250,
+              }}
+              alt="The house from the offer."
+              src={image}
+            />
+            <Typography>
+              Whoops, looks like there's no saved lists!
+            </Typography>
+          </Box> :
         lists.map((list) => {
           return (
             <GroceryCard

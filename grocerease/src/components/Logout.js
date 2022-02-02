@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../navbar.css";
-import { Container, Typography , Button } from "@mui/material";
+import { Container, Button } from "@mui/material";
 
-const Logout = ({ username, token, eraseAuth }) => {
+const Logout = ({ token, eraseAuth }) => {
   const navigate = useNavigate();
   const onClick = () => {
-    console.log("here");
     axios
       .post(
         "https://grocerease.herokuapp.com/auth/token/logout/",
