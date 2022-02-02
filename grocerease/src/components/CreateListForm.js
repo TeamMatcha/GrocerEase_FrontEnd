@@ -3,15 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../createListForm.css";
 import * as React from "react";
-import {
-  CssBaseline,
-  Container,
-  Button,
-  // Box,
-  // Typography,
-  FormControl,
-  TextField,
-} from "@mui/material/";
+import { Container, Box, Button, TextField } from "@mui/material";
 
 const CreateListForm = ({ token }) => {
   const [name, setName] = useState("");
@@ -44,39 +36,59 @@ const CreateListForm = ({ token }) => {
   };
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      
-      <Container fixed style={{ backgroundColor: "#FFF8F0", marginLeft: "10px" }}>
-          <label style={{ textAlign: "left", alignItems: "justify-content", }}>
-            List Name
-          </label>
-
-          <FormControl fullWidth onSubmit={handleSubmit}>
-            <TextField
-              style={{ width: "60%" }}
-              className="createListInput"
-              type="text"
-              value={name}
-              onChange={(event) => handleChange("name", event)}
-            />
-            <Button
-            sx={{
-            display:"flex",
-            justifyContent: "flex-end",
-            marginRight: "50px",
-            color: "black",
-
+<React.Fragment>
+<Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
           }}
+        >
+          <TextField
+            sx={{
+              "& .MuiSelect-select": { padding: "3px 10px" },
+              marginTop: "15px",
+              "& label": { background: "#FFF8F0", px: 1, py: 0 },
+              width: "297px",
+              height: "32px",
+              marginRight: "10px",
+            }}
+            select
+            label="Sort By"
+            labelWidth={250}
+            variant="outlined"
+            value="Date"
+            id="outlined-basic"
+            label="List Name"
+            variant="outlined"
+            color="primary"
+            type="text"
+            placeholder="List's Name"
+            onChange={(event) => handleChange("name", event)}
+            component="div"
+          />
 
-                onClick={handleSubmit}
-
-              >
-                {" "}
-                Submit{" "}
-              </Button>
-          </FormControl>
-      </Container>
+          <Button
+            color="special"
+            sx={{
+              fontSize: "10px",
+              height: "29px",
+              fontWeight: "100",
+              color: "#FFF8F0",
+              marginTop: "15px"
+            }}
+            variant="contained"
+            onClick={handleSubmit}
+            type="submit"
+          >
+            Create
+          </Button>
+        </Box>
+      </Box>
     </React.Fragment>
   );
 };

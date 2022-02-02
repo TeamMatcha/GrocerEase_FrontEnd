@@ -4,11 +4,11 @@ import { GroceryCard } from "./GroceryCard";
 import _ from "lodash";
 import "../groceryCard.css";
 import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import Container from "@mui/material/Container";
+import { Container, Box, TextField, MenuItem, Select } from "@mui/material";
 
 const SavedGroceryList = ({ token }) => {
   const [lists, setLists] = useState([]);
+  const [choices, setChoices] = useState("date_created")
   useEffect(() => {
     axios
       .get("https://grocerease.herokuapp.com/grocerease/lists/", {
@@ -30,13 +30,14 @@ const SavedGroceryList = ({ token }) => {
       .catch((error) => console.log(error));
   }, [token, setLists]);
 
-  const SortList = (event) => {
+  const sortList = (event) => {
     const sorted_lists = _.orderBy(
       lists,
       [event.target.value],
       // if the event.target.value = the date_created set descinding order
       [event.target.value === "date_created" && "desc"]
     );
+    console.log(event)
     console.log({ sorted_lists });
     setLists(sorted_lists);
   };
@@ -58,34 +59,46 @@ const SavedGroceryList = ({ token }) => {
 
   return (
     <React.Fragment>
-      <CssBaseline />
-
-      <Container style={{ backgroundColor: "FF8811" }}>
-        <div>
-          <div className="search-filter" size="medium" padding="50px">
-            <div>
-              <label>Sort By:</label>
-              <select onChange={SortList} className="sort-by" >
-                <option value="date_created">Date</option>
-                <option value="name">Name</option>
-              </select>
-            </div>
-          </div>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+          // height: "95vh"
+        }}
+      >
+          <TextField
+            sx={{
+              "& .MuiSelect-select": { padding: "3px 10px" },
+              marginTop: "15px",
+              "& label": { background: "#FFF8F0", px: 1, py: 0 },
+              width: "375px",
+              height: "35px",
+            }}
+            select
+            label="Sort By"
+            labelWidth={250}
+            variant="outlined"
+            onChange={sortList}
+            value="date_created"
+          >
+            <MenuItem value="date_created">Date</MenuItem>
+            <MenuItem value="name">List Name</MenuItem>
+          </TextField>
           {lists &&
-            lists.map((list) => {
-              return (
-                <GroceryCard
-                  name={list.name}
-                  date_created={list.date_created}
-                  tags={list.tags}
-                  listId={list.pk}
-                  onDelete={DeleteList}
-                />
-              );
-            })}
+        lists.map((list) => {
+          return (
+            <GroceryCard
+              name={list.name}
+              date_created={list.date_created}
+              tags={list.tags}
+              listId={list.pk}
+              onDelete={DeleteList}
+            />
+          );
+        })}
 
-        </div>
-      </Container>
+        </Box>
     </React.Fragment>
   );
 };

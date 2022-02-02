@@ -6,16 +6,14 @@ import {Container, Typography, Box }from "@mui/material/";
 
 const Navbar = ({ username, token, eraseAuth }) => {
   return (
-      <Container
-      component="div"
-      
-    >
       <Box
         sx={{
           display: "flex",
           color: "black",
-          flexDirection: "column",
-          backgroundColor: "#FFF8F0"
+          backgroundColor: "#EEB61B",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "15px",
         }}
       >
         <Box
@@ -29,6 +27,7 @@ const Navbar = ({ username, token, eraseAuth }) => {
               fontFamily: "Libre Franklin",
               fontWeight: 900,
               fontSize: "30px",
+              color: "#FFF8F0",
             }}
           >
             Grocer
@@ -38,11 +37,13 @@ const Navbar = ({ username, token, eraseAuth }) => {
               fontWeight: "100 !important",
               fontSize: "30px",
               fontStyle: "italic",
+              color: "#FFF8F0",
             }}
           >
             Ease
           </Typography>
-          <div className="logout-container">
+        </Box>
+        <div className="logout-container">
           <Logout
           sx={{
             display:"flex",
@@ -53,16 +54,11 @@ const Navbar = ({ username, token, eraseAuth }) => {
             token={token}
             eraseAuth={eraseAuth}
             className="logout_button"
-            // display="inline-block"
           />
           </div>
-        </Box>
-
 
           </Box>
-          
 
-      </Container>
   );
 };
 

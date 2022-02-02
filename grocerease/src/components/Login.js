@@ -62,6 +62,8 @@ export default function Login({ isLoggedIn, setAuth }) {
         <Box
           sx={{
             display: "flex",
+            marginTop: "40px",
+
           }}
         >
           <Typography
@@ -89,6 +91,8 @@ export default function Login({ isLoggedIn, setAuth }) {
             fontStyle: "italic",
             margin: 0,
             alignItems: "center", 
+            marginLeft: "50px",
+            marginBottom: "0px",
           }}
         >
           Shopping can be a breeze!
@@ -96,12 +100,12 @@ export default function Login({ isLoggedIn, setAuth }) {
       </Box>
       <Box
         sx={{
-          display: "flex",
+          display: "flex-end",
           flexDirection: "column",
-          margin: "15px",
+          margin: "50px",
           backgroundColor: "#FFFFFF",
           padding: "25px",
-          marginBottom: "75px",
+          marginTop: "65px",
           color: "#FFF8F0",
           borderRadius: "10%",
           boxShadow: "10",

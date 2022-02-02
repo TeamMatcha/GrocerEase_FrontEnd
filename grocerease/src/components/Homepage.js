@@ -32,9 +32,11 @@ const Homepage = () => {
           flexDirection: "column",
         }}
       >
-        <Box
+        <Box style={{background: "#EEB61B"}}
           sx={{
             display: "flex",
+          padding: "10px",
+
           }}
         >
           <Typography
@@ -51,6 +53,7 @@ const Homepage = () => {
               fontWeight: "100 !important",
               fontSize: "60px",
               fontStyle: "italic",
+
             }}
           >
             Ease
