@@ -108,7 +108,7 @@ export default function Login({ isLoggedIn, setAuth }) {
         component="form"
         onSubmit={handleSubmit}
       >
-        <FormControl fullWidth style={{ marginBottom: "20px" }} className="mt3">
+        <FormControl fullWidth style={{ marginBottom: "20px", fontWeight: "400px" }} className="mt3">
           <TextField
             placeholder="Username"
             variant="filled"
@@ -118,7 +118,7 @@ export default function Login({ isLoggedIn, setAuth }) {
             onChange={(event) => setUsername(event.target.value)}
           />
         </FormControl>
-        <FormControl style={{ marginBottom: "25px" }} fullWidth>
+        <FormControl fullWidth style={{ marginBottom: "25px", fontWeight: "800px"}} >
           <TextField
             placeholder="Password"
             variant="filled"
@@ -129,7 +129,7 @@ export default function Login({ isLoggedIn, setAuth }) {
           />
         </FormControl>
         <FormControl fullWidth>
-          <Button variant="outlined" type="submit" style={{ color:"black", borderColor:"black",}}>
+          <Button variant="outlined" type="submit" style={{ color:"#FF8811", borderColor:"#FF8811",}}>
             Login
           </Button>
         </FormControl>
