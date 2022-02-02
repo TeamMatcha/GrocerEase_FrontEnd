@@ -113,7 +113,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        backgroundColor: "#FFF8F0",
+        backgroundColor: "#EEB61B",
         padding: "16px",
         minHeight: "95vh",
       }}
@@ -141,7 +141,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
           <Box>
             <Box
               sx={{
-                backgroundColor: "#FFF8F0",
+                backgroundColor: "#EEB61B",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -193,8 +193,8 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
                 <TextField
                   sx={{
                     "& .MuiSelect-select": { padding: "3px 10px" },
-                    marginTop: "10px",
-                    "& label": { background: "#FFF8F0", px: 1, py: 0 },
+                    marginTop: "15px",
+                    "& label": { background: "#EEB61B", px: 1, py: 0 },
                     width: "297px",
                     height: "32px",
                   }}
@@ -236,7 +236,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
                     color="special"
                     sx={{
                       fontSize: "10px",
-                      marginTop: "10px",
+                      marginTop: "15px",
                       marginLeft: "4px",
                       height: "27px",
                       fontWeight: "100",
@@ -304,15 +304,6 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
             src="https://github.com/TeamMatcha/GrocerEase_FrontEnd/blob/main/grocerease/src/images/emptyList.png?raw=true"
           />
         ) : (
-          // <Box
-          //   sx={{
-          //     backgroundImage: `url(${emptyList})`,
-          //     width: "700px",
-          //     height: "700px",
-          //     backgroundSize: "cover",
-          //     backgroundPosition: "center",
-          //   }}
-          // ></Box>
           <Box sx={{ overflowY: "scroll", height: "100%" }}>
             {items.map((item) => {
               return (
@@ -330,7 +321,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
             display: "flex",
             justifyContent: "center",
             margin: "6px",
-            backgroundColor: "#FFF8F0",
+            backgroundColor: "#EEB61B",
           }}
         >
           <Button

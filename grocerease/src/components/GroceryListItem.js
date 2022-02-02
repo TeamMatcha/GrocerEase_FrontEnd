@@ -44,8 +44,8 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
     <TableRow
       key={item.name}
       sx={{
-        background: "#EEB61B",
-        color: "#FFF8F0",
+        background: "#FFF8F0",
+        color: "black",
       }}
     >
       <TableCell sx={{ width: "32px" }} scope="row">
@@ -59,7 +59,7 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
           sx={{
             minWidth: "32px",
             textAlign: "center",
-            color: "#FFF8F0",
+            color: "black",
           }}
         />
       </TableCell>
@@ -72,7 +72,7 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
             deleteItem(item);
           }}
         >
-          <DeleteIcon sx={{ color: "#FFF8F0", fontSize: "20px", p: 0, m: 0 }} />
+          <DeleteIcon sx={{ color: "black", fontSize: "20px", p: 0, m: 0 }} />
         </IconButton>
       </TableCell>
     </TableRow>

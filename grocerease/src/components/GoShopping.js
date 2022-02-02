@@ -2,17 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import CheckListItem from "./CheckListItem";
-import { Container, Button, Box, Typography, TextField } from "@mui/material";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import { Container, Box, Typography, TextField, Button } from "@mui/material";
 import Navbar from "./Navbar";
 import confetti from "canvas-confetti";
-import emptyList from "../images/emptyList.png";
 
 const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
   const location = useLocation();
@@ -91,7 +83,7 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        backgroundColor: "#FFF8F0",
+        backgroundColor: "#EEB61B",
         padding: "16px",
         minHeight: "95vh",
         width: "100%",
@@ -120,7 +112,7 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
           <Box>
             <Box
               sx={{
-                backgroundColor: "#FFF8F0",
+                backgroundColor: "#EEB61B",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -173,6 +165,7 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
               <Typography
                 sx={{
                   minWidth: "32px",
+                  pr: 1.5,
                 }}
               >
                 Count
@@ -181,8 +174,8 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
             <Box>
               <Typography
                 sx={{
-                  pl: 1.4,
-                  minWidth: "64px",
+                  pl: 1,
+                  minWidth: "120px",
                 }}
               >
                 Category
@@ -198,78 +191,28 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
             return <CheckListItem item={item} />;
           })}
         </Box>
+        <Box
+          sx={{
+            mt: 0.9,
+          }}
+        >
+          <Button
+            color="special"
+            variant="contained"
+            onClick={doneShopping}
+            sx={{
+              height: "32px",
+              margin: "2px",
+              mx: "auto",
+              color: "#FFF8F0",
+              fontWeight: "100",
+            }}
+          >
+            Done Shopping
+          </Button>
+        </Box>
       </Box>
     </Container>
-    // <Container
-    //   sx={{
-    //     display: "flex",
-    //     alignItems: "center",
-    //     flexDirection: "column",
-    //     backgroundColor: "#FFF8F0",
-    //     padding: "16px",
-    //     minHeight: "95vh",
-    //   }}
-    //   component="div"
-    // >
-    //   <Box
-    //     sx={{
-    //       maxHeight: "95vh",
-    //       display: "flex",
-    //       flexDirection: "column",
-    //       width: "316px",
-    //     }}
-    //   >
-    //     <Box>
-    //       <Typography
-    //         sx={{
-    //           display: "flex",
-    //           flexDirection: "column",
-    //           justifyContent: "center",
-    //           height: "10px",
-    //           fontWeight: "600",
-    //           fontSize: "24px",
-    //         }}
-    //       >
-    //         {listName}
-    //       </Typography>
-
-    //       <Box
-    //         sx={{
-    //           maxHeight: "95vh",
-    //           display: "flex",
-    //           maxWidth: "300px",
-    //         }}
-    //       >
-    //         <Typography sx={{}}>Product</Typography>
-    //         <Typography sx={{}}>Count</Typography>
-    //         <Typography sx={{}}>Category</Typography>
-    //       </Box>
-
-    //       <Box sx={{ overflowY: "auto", height: "100%" }}>
-    //         {items.map((item) => {
-    //           return <CheckListItem item={item} />;
-    //         })}
-    //       </Box>
-
-    //       <Box>
-    //         <Button
-    //           color="special"
-    //           variant="contained"
-    //           onClick={doneShopping}
-    //           sx={{
-    //             height: "32px",
-    //             margin: "2px",
-    //             mx: "auto",
-    //             color: "black",
-    //             fontWeight: "100",
-    //           }}
-    //         >
-    //           Done Shopping
-    //         </Button>
-    //       </Box>
-    //     </Box>
-    //   </Box>
-    // </Container>
   );
 };
 
