@@ -83,7 +83,7 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        backgroundColor: "#EEB61B",
+        backgroundColor: "#FFF8F0",
         padding: "16px",
         minHeight: "95vh",
         width: "100%",
@@ -112,7 +112,7 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
           <Box>
             <Box
               sx={{
-                backgroundColor: "#EEB61B",
+                backgroundColor: "#FFF8F0",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -129,6 +129,7 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
                 onChange={(event) => setListName(event.target.value)}
                 component="div"
                 sx={{
+                  borderRadius: "5px",
                   width: "320px",
                   height: "32px",
                 }}
@@ -144,7 +145,7 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
             <Box>
               <Typography
                 sx={{
-                  minWidth: "64px",
+                  minWidth: "48px",
                 }}
               ></Typography>
             </Box>
@@ -155,7 +156,7 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
             >
               <Typography
                 sx={{
-                  minWidth: "120px",
+                  minWidth: "100px",
                 }}
               >
                 Product
@@ -193,17 +194,19 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
         </Box>
         <Box
           sx={{
-            mt: 0.9,
+            mt: 1.5,
           }}
         >
           <Button
-            color="special"
+            // color="special"
             variant="contained"
             onClick={doneShopping}
             sx={{
               height: "32px",
               margin: "2px",
               mx: "auto",
+              background: "#EEB61B",
+              border: " 1px solid #EEB61B",
               color: "#FFF8F0",
               fontWeight: "100",
             }}

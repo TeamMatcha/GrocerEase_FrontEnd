@@ -113,7 +113,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        backgroundColor: "#EEB61B",
+        backgroundColor: "#FFF8F0",
         padding: "16px",
         minHeight: "95vh",
       }}
@@ -124,7 +124,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
       )}
       <Box
         sx={{
-          maxHeight: "95vh",
+          maxHeight: "90vh",
           display: "flex",
           flexDirection: "column",
           maxWidth: "350px",
@@ -141,7 +141,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
           <Box>
             <Box
               sx={{
-                backgroundColor: "#EEB61B",
+                backgroundColor: "#FFF8F0",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -194,7 +194,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
                   sx={{
                     "& .MuiSelect-select": { padding: "3px 10px" },
                     marginTop: "15px",
-                    "& label": { background: "#EEB61B", px: 1, py: 0 },
+                    "& label": { background: "#FFF8F0", px: 1, py: 0 },
                     width: "297px",
                     height: "32px",
                   }}
@@ -261,7 +261,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
             >
               <Box
                 sx={{
-                  width: "75px",
+                  width: "115px",
                   display: "flex",
                 }}
               >
@@ -270,7 +270,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
               <Box>
                 <Typography
                   sx={{
-                    pr: 1,
+                    pr: 4.3,
                   }}
                 >
                   Count
@@ -279,7 +279,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
               <Box>
                 <Typography
                   sx={{
-                    pl: 1.4,
+                    pl: 0.3,
                   }}
                 >
                   Category
@@ -321,7 +321,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
             display: "flex",
             justifyContent: "center",
             margin: "6px",
-            backgroundColor: "#EEB61B",
+            backgroundColor: "#FFF8F0",
           }}
         >
           <Button

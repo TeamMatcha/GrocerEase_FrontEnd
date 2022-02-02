@@ -19,40 +19,37 @@ const CheckListItem = ({ item }) => {
           height: "2px",
           position: "absolute",
           background: checked ? "black" : "transparent",
-          width: "287px",
+          width: "296px",
           ml: "16px",
-          mt: "24px",
+          mt: "26px",
         },
       }}
     >
-      <TableCell sx={{ width: "32px" }} scope="row" align="right">
+      <TableCell
+        sx={{ width: "32px", borderBottom: "1px solid #EEB61B" }}
+        scope="row"
+        align="right"
+      >
         <Checkbox
           checked={checked}
           onChange={() => setChecked((x) => !x)}
           sx={{ m: 0, p: 0 }}
         />
       </TableCell>
-      <TableCell sx={{ minWidth: "120px" }} scope="row">
+      <TableCell
+        sx={{ minWidth: "120px", borderBottom: "1px solid #EEB61B" }}
+        scope="row"
+      >
         {item.name}
       </TableCell>
-      <TableCell scope="row"> {item.item_quantity}</TableCell>
-      <TableCell sx={{ minWidth: "48px" }}>{item.choices}</TableCell>
+      <TableCell scope="row" sx={{ borderBottom: "1px solid #EEB61B" }}>
+        {" "}
+        {item.item_quantity}
+      </TableCell>
+      <TableCell sx={{ minWidth: "130px", borderBottom: "1px solid #EEB61B" }}>
+        {item.choices}
+      </TableCell>
     </TableRow>
-    // <TableRow
-    //   key={item.name}
-
-    // >
-    //   <TableCell sx={{ width: "32px", display: "flex", alignItems: "center" }}>
-
-    //   </TableCell>
-    //   <TableCell sx={{ width: "80px" }} scope="row">
-    //     {item.name}
-    //   </TableCell>
-    //   <TableCell sx={{ width: "64px", textAlign: "center" }}>
-    //     {item.item_quantity}
-    //   </TableCell>
-    //   <TableCell sx={{ width: "140px" }}>{item.choices}</TableCell>
-    // </TableRow>
   );
 };
 

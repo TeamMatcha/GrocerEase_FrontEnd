@@ -48,10 +48,18 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
         color: "black",
       }}
     >
-      <TableCell sx={{ width: "32px" }} scope="row">
+      <TableCell
+        sx={{ width: "32px", borderBottom: "1px solid #EEB61B" }}
+        scope="row"
+      >
         {item.name}
       </TableCell>
-      <TableCell scope="row">
+      <TableCell
+        sx={{
+          borderBottom: "1px solid #EEB61B",
+        }}
+        scope="row"
+      >
         <Input
           value={itemCount}
           onChange={(event) => setItemCount(event.target.value)}
@@ -63,9 +71,15 @@ const GroceryListItem = ({ item, token, onGrabList }) => {
           }}
         />
       </TableCell>
-      <TableCell sx={{ width: "16px" }}>{item.choices}</TableCell>
+      <TableCell sx={{ width: "16px", borderBottom: "1px solid #EEB61B" }}>
+        {item.choices}
+      </TableCell>
 
-      <TableCell sx={{ width: "32px" }} scope="row" align="right">
+      <TableCell
+        sx={{ width: "32px", borderBottom: "1px solid #EEB61B" }}
+        scope="row"
+        align="right"
+      >
         <IconButton
           onClick={(event) => {
             event.preventDefault();
