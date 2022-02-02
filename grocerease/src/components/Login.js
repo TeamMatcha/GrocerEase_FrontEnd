@@ -56,14 +56,12 @@ export default function Login({ isLoggedIn, setAuth }) {
           color: "#FFF8F0",
           flexDirection: "column",
           borderRadius: "25%",
-
         }}
       >
         <Box
           sx={{
             display: "flex",
             marginTop: "40px",
-
           }}
         >
           <Typography
@@ -90,7 +88,7 @@ export default function Login({ isLoggedIn, setAuth }) {
             fontSize: "20px",
             fontStyle: "italic",
             margin: 0,
-            alignItems: "center", 
+            alignItems: "center",
             marginLeft: "50px",
             marginBottom: "0px",
           }}
@@ -113,7 +111,11 @@ export default function Login({ isLoggedIn, setAuth }) {
         component="form"
         onSubmit={handleSubmit}
       >
-        <FormControl fullWidth style={{ marginBottom: "20px", fontWeight: "400px" }} className="mt3">
+        <FormControl
+          fullWidth
+          style={{ marginBottom: "20px", fontWeight: "400px" }}
+          className="mt3"
+        >
           <TextField
             placeholder="Username"
             variant="filled"
@@ -123,7 +125,10 @@ export default function Login({ isLoggedIn, setAuth }) {
             onChange={(event) => setUsername(event.target.value)}
           />
         </FormControl>
-        <FormControl fullWidth style={{ marginBottom: "25px", fontWeight: "800px"}} >
+        <FormControl
+          fullWidth
+          style={{ marginBottom: "25px", fontWeight: "800px" }}
+        >
           <TextField
             placeholder="Password"
             variant="filled"
@@ -134,8 +139,20 @@ export default function Login({ isLoggedIn, setAuth }) {
           />
         </FormControl>
         <FormControl fullWidth>
-          <Button variant="outlined" type="submit" style={{ color:"#FF8811", borderColor:"#FF8811",}}>
+          <Button
+            variant="outlined"
+            type="submit"
+            style={{ color: "#FF8811", borderColor: "#FF8811", marginBottom: "10px" }}
+          >
             Login
+          </Button>
+          <Button
+            href="/register"
+            variant="outlined"
+            type="submit"
+            style={{ color: "#FF8811", borderColor: "#FF8811" }}
+          >
+            Register
           </Button>
         </FormControl>
       </Box>

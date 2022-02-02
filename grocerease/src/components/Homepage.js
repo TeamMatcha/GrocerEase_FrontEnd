@@ -1,18 +1,11 @@
 import "../homepage.css";
 import iphoto from "../images/produceBar.png";
-import {
-  Typography,
-  Container,
-  Box,
-  Button,
-  }  from "@mui/material";
-
-
+import { Typography, Container, Box, Button } from "@mui/material";
 
 const Homepage = () => {
   return (
-        <Container
-        sx={{
+    <Container
+      sx={{
         display: "flex",
         justifyContent: "flex-end",
         flexDirection: "column",
@@ -27,23 +20,24 @@ const Homepage = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "center",
-          color: "#FFF8F0",
+          justifyContent: "space-between",
+          // alignItems: "center",
+          padding: "15px",
           flexDirection: "column",
         }}
       >
-        <Box style={{background: "#EEB61B"}}
+        <Box
           sx={{
             display: "flex",
-          padding: "10px",
-
+            margin: "0px",
           }}
         >
           <Typography
             sx={{
               fontFamily: "Libre Franklin",
               fontWeight: 900,
-              fontSize: "60px",
+              fontSize: "65px",
+              color: "#FFF8F0",
             }}
           >
             Grocer
@@ -51,9 +45,9 @@ const Homepage = () => {
           <Typography
             sx={{
               fontWeight: "100 !important",
-              fontSize: "60px",
+              fontSize: "65px",
               fontStyle: "italic",
-
+              color: "#FFF8F0",
             }}
           >
             Ease
@@ -61,40 +55,42 @@ const Homepage = () => {
         </Box>
         <Typography
           sx={{
-            fontSize: "20px",
+            fontSize: "25px",
             fontStyle: "italic",
             margin: 0,
+            color: "#FFF8F0",
+            fontWeight: "200px",
           }}
         >
-          shop quick, easy, and in a breeze!
+          Shopping can be a breeze!
         </Typography>
       </Box>
 
-      <Button variant="contained" href="/login"
-      sx={{
-         margin: "10px",
-         backgroundColor: "#FFF8F0",
-         color: "black", 
-        
-      }}
+      <Button
+        variant="contained"
+        href="/login"
+        sx={{
+          margin: "10px",
+          backgroundColor: "#FFF8F0",
+          color: "black",
+        }}
       >
-      Login
+        Login
       </Button>
-      
-      <Button variant="contained" href="/register"
-      sx={{
-       margin: "10px",
-       textAlign: "center", 
-       backgroundColor: "#FFF8F0",
-       color: "black",
-     }}
-     >
-      Register
+
+      <Button
+        variant="contained"
+        href="/register"
+        sx={{
+          margin: "10px",
+          textAlign: "center",
+          backgroundColor: "#FFF8F0",
+          color: "black",
+        }}
+      >
+        Register
       </Button>
-      
-      
-        
-    </Container>    
+    </Container>
   );
 };
 
