@@ -2,7 +2,7 @@ import "../navbar.css";
 import Logout from "./Logout";
 import "../navbar.css";
 import * as React from "react";
-import {Container, Typography, Box }from "@mui/material/";
+import { Typography, Box } from "@mui/material/";
 import { useLocation} from "react-router-dom";
 
 const Navbar = ({ username, token, eraseAuth }) => {

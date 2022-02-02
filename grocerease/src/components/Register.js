@@ -57,132 +57,132 @@ export const Register = ({ setAuth, isLoggedIn }) => {
 
   return (
     <Container
-    sx={{
-      display: "flex",
-      justifyContent: "flex-end",
-      flexDirection: "column",
-      height: "100vh",
-      backgroundColor: "white",
-      backgroundImage: `url(${oranges})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}
-    component="div"
-  >
-    <Box
       sx={{
         display: "flex",
-        justifyContent: "center",
-        color: "#FFF8F0",
+        justifyContent: "flex-end",
         flexDirection: "column",
-        borderRadius: "25%",
+        height: "100vh",
+        backgroundColor: "white",
+        backgroundImage: `url(${oranges})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
+      component="div"
     >
       <Box
         sx={{
           display: "flex",
-          marginTop: "40px",
+          justifyContent: "center",
+          color: "#FFF8F0",
+          flexDirection: "column",
+          borderRadius: "25%",
+          alignItems: 'center',
         }}
       >
-        <Typography
+        <Box
           sx={{
-            fontFamily: "Libre Franklin",
-            fontWeight: 900,
-            fontSize: "60px",
+            display: "flex",
+            marginTop: "40px",
           }}
         >
-          Grocer
-        </Typography>
+          <Typography
+            sx={{
+              fontFamily: "Libre Franklin",
+              fontWeight: 900,
+              fontSize: "60px",
+            }}
+          >
+            Grocer
+          </Typography>
+          <Typography
+            sx={{
+              fontWeight: "100 !important",
+              fontSize: "60px",
+              fontStyle: "italic",
+            }}
+          >
+            Ease
+          </Typography>
+        </Box>
         <Typography
           sx={{
-            fontWeight: "100 !important",
-            fontSize: "60px",
+            fontSize: "20px",
             fontStyle: "italic",
+            margin: 0,
+            alignItems: "center",
+            marginLeft: "50px",
+            marginBottom: "0px",
           }}
         >
-          Ease
+          Shopping can be a breeze!
         </Typography>
       </Box>
-      <Typography
+      <Box
         sx={{
-          fontSize: "20px",
-          fontStyle: "italic",
-          margin: 0,
-          alignItems: "center",
-          marginLeft: "50px",
-          marginBottom: "0px",
+          display: "flex-end",
+          flexDirection: "column",
+          margin: "50px",
+          backgroundColor: "#FFFFFF",
+          padding: "25px",
+          marginTop: "65px",
+          color: "#FFF8F0",
+          borderRadius: "10%",
+          boxShadow: "10",
         }}
+        component="form"
+        onSubmit={handleSubmit}
       >
-        Shopping can be a breeze!
-      </Typography>
-    </Box>
-    <Box
-      sx={{
-        display: "flex-end",
-        flexDirection: "column",
-        margin: "50px",
-        backgroundColor: "#FFFFFF",
-        padding: "25px",
-        marginTop: "65px",
-        color: "#FFF8F0",
-        borderRadius: "10%",
-        boxShadow: "10",
-      }}
-      component="form"
-      onSubmit={handleSubmit}
-    >
-      <FormControl
-        fullWidth
-        style={{ marginBottom: "20px", fontWeight: "400px" }}
-        className="mt3"
-      >
-        <TextField
-          placeholder="Username"
-          variant="filled"
-          color="primary"
-          type="text"
-          id="username"
-          onChange={(e) => handleChange("username", e)}
-        />
-      </FormControl>
-      <FormControl
-        fullWidth
-        style={{ marginBottom: "25px", fontWeight: "800px" }}
-      >
-        <TextField
-          placeholder="Password"
-          variant="filled"
-          color="primary"
-          type="password"
-          id="password"
-          onChange={(e) => handleChange("password", e)}
-        />
-      </FormControl>
-      <FormControl
-        fullWidth
-        style={{ marginBottom: "25px", fontWeight: "800px" }}
-      >
-        <TextField
-          placeholder="Email"
-          variant="filled"
-          color="primary"
-          type="email"
-          id="email"
-          onChange={(e) => handleChange("email", e)}
-        />
-      </FormControl>
-
-      <FormControl fullWidth>
-        <Button
-          href="/lists"
-          variant="outlined"
-          type="submit"
-          style={{ color: "#FF8811", borderColor: "#FF8811" }}
+        <FormControl
+          fullWidth
+          style={{ marginBottom: "20px", fontWeight: "400px" }}
+          className="mt3"
         >
-          Register
-        </Button>
-      </FormControl>
-    </Box>
-  </Container>
+          <TextField
+            placeholder="Username"
+            variant="filled"
+            color="primary"
+            type="text"
+            id="username"
+            onChange={(e) => handleChange("username", e)}
+          />
+        </FormControl>
+        <FormControl
+          fullWidth
+          style={{ marginBottom: "25px", fontWeight: "800px" }}
+        >
+          <TextField
+            placeholder="Password"
+            variant="filled"
+            color="primary"
+            type="password"
+            id="password"
+            onChange={(e) => handleChange("password", e)}
+          />
+        </FormControl>
+        <FormControl
+          fullWidth
+          style={{ marginBottom: "25px", fontWeight: "800px" }}
+        >
+          <TextField
+            placeholder="Email"
+            variant="filled"
+            color="primary"
+            type="email"
+            id="email"
+            onChange={(e) => handleChange("email", e)}
+          />
+        </FormControl>
 
-  )}
+        <FormControl fullWidth>
+          <Button
+            variant="outlined"
+            type="submit"
+            style={{ color: "#FF8811", borderColor: "#FF8811" }}
+          >
+            Register
+          </Button>
+        </FormControl>
+      </Box>
+    </Container>
+  )
+}

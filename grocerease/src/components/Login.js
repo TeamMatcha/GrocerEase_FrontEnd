@@ -55,7 +55,8 @@ export default function Login({ isLoggedIn, setAuth }) {
           justifyContent: "center",
           color: "#FFF8F0",
           flexDirection: "column",
-          borderRadius: "25%",
+          borderRadius: "30px",
+          alignItems: 'center',
         }}
       >
         <Box
@@ -89,7 +90,7 @@ export default function Login({ isLoggedIn, setAuth }) {
             fontStyle: "italic",
             margin: 0,
             alignItems: "center",
-            marginLeft: "50px",
+            // marginLeft: "50px",
             marginBottom: "0px",
           }}
         >

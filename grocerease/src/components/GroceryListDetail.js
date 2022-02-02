@@ -108,6 +108,10 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
   };
 
   return (
+    <>
+      {isLoggedIn && (
+        <Navbar username={username} token={token} eraseAuth={eraseAuth} />
+      )}
     <Container
       sx={{
         display: "flex",
@@ -118,10 +122,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
         minHeight: "95vh",
       }}
       component="div"
-    >
-      {isLoggedIn && (
-        <Navbar username={username} token={token} eraseAuth={eraseAuth} />
-      )}
+      >
       <Box
         sx={{
           maxHeight: "90vh",
@@ -292,6 +293,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
           )}
         </Box>
         {items.length === 0 ? (
+          <Box style={{ textAlign: 'center' }}>
           <Box
             component="img"
             sx={{
@@ -303,6 +305,10 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
             alt="The house from the offer."
             src="https://github.com/TeamMatcha/GrocerEase_FrontEnd/blob/main/grocerease/src/images/emptyList.png?raw=true"
           />
+            <Typography>
+              Whoops, looks like this list has no items!
+            </Typography>
+          </Box>
         ) : (
           <Box sx={{ overflowY: "scroll", height: "100%" }}>
             {items.map((item) => {
@@ -353,6 +359,7 @@ const GroceryListDetail = ({ token, isLoggedIn, username, eraseAuth }) => {
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 
