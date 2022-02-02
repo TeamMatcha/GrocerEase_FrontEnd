@@ -78,6 +78,10 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
       });
   }, []);
   return (
+    <>
+      {isLoggedIn && (
+        <Navbar username={username} token={token} eraseAuth={eraseAuth} />
+      )}
     <Container
       sx={{
         display: "flex",
@@ -89,10 +93,7 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
         width: "100%",
       }}
       component="div"
-    >
-      {isLoggedIn && (
-        <Navbar username={username} token={token} eraseAuth={eraseAuth} />
-      )}
+      >
       <Box
         sx={{
           maxHeight: "95vh",
@@ -216,6 +217,7 @@ const GoShopping = ({ token, username, isLoggedIn, eraseAuth }) => {
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 
